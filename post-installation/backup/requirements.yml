@@ -1,0 +1,14 @@
+---
+- src: https://github.com/carlosfrias/apigee-opdk-settings-private-address.git
+
+- src: https://github.com/carlosfrias/apigee-opdk-backup.git
+
+- src: https://github.com/carlosfrias/apigee-opdk-modules
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-openjdk.git
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-java-home.git
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap.git
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-archive-installer.git

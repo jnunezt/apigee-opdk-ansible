@@ -1,0 +1,109 @@
+---
+- name: Configure SSH for a remote user
+  hosts: '{{ target_hosts }}'
+  gather_facts: no
+
+  vars:
+    pubkey: '~/.ssh/id_rsa.pub'
+    pvtkey: '~/.ssh/id_rsa'
+    sshd_config: '/etc/ssh/sshd_config'
+    sudoers: '/etc/sudoers.d/apigee-requiretty'
+
+  tasks:
+  - block:
+    - name: Get current user if remote_user not provided
+      shell: whoami
+      register: whoami
+
+    - name:  Set remote_user
+      set_fact:
+        remote_user: "{{ whoami.stdout }}"
+
+    - name: Determine state of public key
+      stat:
+        path: "{{ pubkey }}"
+      register: pubkey_state
+
+    delegate_to: localhost
+
+  - block:
+    - name: Assert availability of openssh
+      yum:
+        name: openssh
+        state: present
+
+    - name: Generate SSH keys
+      shell: ssh-keygen -b 2048 -t rsa -f {{ pvtkey }} -q -N ""
+      args:
+        creates: "{{ pvtkey }}"
+
+    delegate_to: localhost
+    when: not pubkey_state.stat.exists
+
+  - name: Assert state of public key
+    stat:
+      path: "{{ pubkey }}"
+    register: pubkey_state
+
+  - name: Set public keys as authorized keys on server
+    tags: ['authorized-keys']
+    authorized_key:
+      user: '{{ ansible_user }}'
+      state: present
+      key: "{{ lookup('file', '{{ pubkey }}') }}"
+    when: pubkey_state.stat.exists is defined
+
+  - name: Copy keys to server
+    tags: ['copy-keys']
+    copy:
+      src: "{{ item }}"
+      dest: "~/.ssh/{{ item | basename }}"
+    with_items:
+      - "{{ pvtkey }}"
+      - "{{ pubkey }}"
+
+  - name: Enable root login over SSH
+    tags: ['ssh']
+    become: yes
+    lineinfile:
+      state: present
+      dest: "{{ sshd_config }}"
+      regexp: "{{ item.regexp }}"
+      line: "{{ item.line}}"
+      backrefs: yes
+      create: yes
+    with_items:
+      - {regexp: '(^#)(PermitRootLogin yes)', line: '\2' }
+      - {regexp: '(PermitRootLogin) no', line: '\1 yes' }
+    notify:
+    - Restart SSH service
+
+  - name: Determine if sudoers config exists
+    tags: ['sudo']
+    become: true
+    stat:
+      path: "{{ sudoers }}"
+    register: sudoers_state
+
+  - name: Enable Root with no Password Prompt
+    tags: ['sudo']
+    become: true
+    lineinfile:
+      state: present
+      dest: "{{ sudoers }}"
+      regexp: "{{ item.regexp }}"
+      line: "{{ item.line }}"
+      backrefs: yes
+      mode: 0740
+      validate: '/usr/sbin/visudo -cf %s'
+    with_items:
+      - { regexp: '(^#)(Defaults.*requiretty)', line: "Defaults !requiretty" }
+      - { regexp: '^root.*ALL=.*$', line: "root ALL=NOPASSWD: ALL" }
+    when: sudoers_state.stat.exists
+
+  handlers:
+  - name: Restart SSH service
+    become: true
+    service:
+      name: sshd
+      state: restarted

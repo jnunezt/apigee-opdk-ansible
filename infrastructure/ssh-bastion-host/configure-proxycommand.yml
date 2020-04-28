@@ -1,0 +1,11 @@
+---
+- name: Configure ProxyCommand to Use Bastion Host
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars_files:
+    - bastion_host_attribute.yml
+
+  roles:
+    - { role: bastion-host-proxycommand, tags: ['proxy-command'], marker_begin: "BASTION_HOST_PROXYCOMMAND_CONFIG_BEGIN", marker_end: "BASTION_HOST_PROXYCOMMAND_CONFIG_END" }
+

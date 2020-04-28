@@ -1,0 +1,13 @@
+---
+- name: Retrieve log files
+  hosts: "{{ target_hosts | default('planet') }}"
+  gather_facts: no
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+
+  roles:
+  - { role: apigee-opdk-modules }
+  - { role: apigee-opdk-setup-bootstrap-cache }
+  - { role: apigee-fetch-files, download_pattern: "{{ pattern }}", download_folder: "{{ target_logs_folder }}" }

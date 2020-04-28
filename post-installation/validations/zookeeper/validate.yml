@@ -1,0 +1,22 @@
+---
+- name: Apigee Zookeeper Leader
+  hosts: ds
+  gather_facts: no
+  tags: ['leader']
+  serial: 1
+  tasks:
+  - name: Display Zookeeper Leadership
+    shell: "echo srvr | nc localhost 2181 | grep Mode:"
+    register: result
+
+- name: Apigee Zookeeper Status
+  hosts: ds
+  gather_facts: no
+  tags: ['status']
+  serial: 1
+  tasks:
+  - name: Display Zookeeper Leadership
+    shell: "echo srvr | nc localhost 2181"
+    register: result
+
+

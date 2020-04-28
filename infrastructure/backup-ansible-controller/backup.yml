@@ -1,0 +1,7 @@
+---
+- name: Backup custom-properties, credentials and license files
+  hosts: "{{ target_hosts }}"
+
+  roles:
+  - { role: apigee-opdk-setup-ansible-controller-backup }
+

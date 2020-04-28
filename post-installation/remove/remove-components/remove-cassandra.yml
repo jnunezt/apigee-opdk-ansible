@@ -1,0 +1,62 @@
+---
+- name: Playbook to remove a cassandra
+  hosts: "{{ target_hosts }}"
+  gather_facts: no
+
+  vars:
+    nodetool: /opt/apigee/apigee-cassandra/bin/nodetool
+    property_folders:
+    - '~/.apigee'
+    - '~/.apigee-secure'
+    component_name: "apigee-cassandra"
+
+  tasks:
+  - name: Backup component
+    tags: ['backup']
+    import_role:
+      name: apigee-opdk-backup
+
+  - name: Assert variables exist
+    assert:
+      that:
+      - private_address is defined and private_address | trim | length > 0
+      - nodetool is defined and nodetool | trim | length > 0
+      msg: "Please provide the missing attribute"
+
+  - name: Assert nodetool_delegate has been indicated
+    assert:
+      that:
+      - nodetool_delegate is defined and nodetool_delegate | trim | length > 0
+      msg: "Please provide the IP address of the nodetool_delegate attribute"
+
+  - name: Cassandra target private address
+    set_fact:
+      target_cassandra_private_address: "{{ private_address }}"
+
+  - name: Obtain Nodetool status
+    shell: "{{ nodetool }} status | grep {{ target_cassandra_private_address }}"
+    register: nodetool_status
+    delegate_to: "{{ nodetool_delegate }}"
+
+  - name: Obtain node UUID
+    set_fact:
+      cacheable: yes
+      cassandra_uuid: "{{ nodetool_status.stdout.split(' ')[-3] }}"
+    when: nodetool_status is defined
+
+  - name: Decommission cassandra node
+    command: "{{ apigee_service }} apigee-cassandra decommission"
+
+  - block:
+    - name: Remove node that is not a part of the ring
+      command: "{{ nodetool }} removenode {{ cassandra_uuid }}"
+      delegate_to: "{{ nodetool_delegate }}"
+
+    rescue:
+    - name: Remove node that is not a part of the ring, using removenode force
+      ignore_errors: true
+      command: "{{ nodetool }} removenode force {{ cassandra_uuid }} "
+      delegate_to: "{{ nodetool_delegate }}"
+
+  - name: Remove Cassandra
+    include_tasks: remove-component.yml
