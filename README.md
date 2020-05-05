@@ -1,6 +1,4 @@
-# Apigee Private Cloud
-
-# Ansible Private Cloud Features
+# Ansible Apigee Private Cloud Features
 The Ansible playbooks in this repository support a wide range of the installation, configuration
 and maintenance use cases that are necessary to successfully manage Apigee Private Cloud Planets.
 We describe the uses cases that are supported as follows: 
