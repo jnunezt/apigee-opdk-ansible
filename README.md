@@ -52,7 +52,7 @@ The use of this framework is composed of the following steps:
     git clone https://github.com/apigee/ansible-opdk-accelerator.git ~/apigee-opdk-accelerator
     
 1. [Setup](README-setup.md) an Ansible control server and workspace.
-1. Configure [Ansible and the Ansible inventory](README-ansible-configuration.md).
+1. Configure Ansible and the Ansible inventory:
 
     2. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md).          
     2. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md).
