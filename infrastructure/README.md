@@ -1,1 +1,0 @@
-#### This purpose of this folder is to contain scripts that work with the infrastructure.

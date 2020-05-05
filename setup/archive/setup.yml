@@ -1,8 +1,0 @@
----
-# - include: setup-ansible-config.yml
-
-#- include: control-server.yml
-
-- import_playbook: setup-base.yml
-
-#- include: setup-ec2.yml
