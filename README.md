@@ -58,18 +58,7 @@ The use of this framework is composed of the following steps:
     1. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md).
 	
 1. Please update [credentials](README-credentials.md) and license.  
-1. Please review and update the runtime [attributes](README-runtime-attributes.md) as needed. Update common installation 
+1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
 1. Use `ansible-playbook` to carry out an activity from either the [installations](installations), [infrastructure](infrastructure) or [post-installation](post-installation) folders.
 
-<!-- BEGIN Google How To Contribute -->
-# How to Contribute
-
-We'd love to accept your patches and contributions to this project. Please review our [guidelines](CONTRIBUTING.md).
-<!-- END Google How To Contribute -->
-<!-- BEGIN Google Required Disclaimer -->
-
-# Not Google Product Clause
-
-This is not an officially supported Google product.
-<!-- END Google Required Disclaimer -->

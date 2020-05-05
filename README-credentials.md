@@ -1,37 +1,45 @@
-## Usage Instructions
+# Configure Ansible OPDK Accelerator Credentials
 
-1. Make a copy of the configuration file template to use as a starter. We recommend that you follow the convention of 
-using the name of the target environment as the name of the ansible configuration file. In the example code below we 
-assume you will configure a `prod` environment and would name your Ansible configuration file `prod.cfg`. This can be 
-accomplished in the following way: 
+The credentials for the OPDK Accelerator are configured in the folder `~/.apigee-secure`. This folder contains the 
+credentials to be used for the Apigee Planet in the file `credentials.yml`. This folder also contains the Apigee license 
+material in a file named license.txt. 
 
+# Required Credentials
 
-        cp ~/.ansible/multi-planet-configurations/templates/apigee-opdk-configuration-template.cfg ~/.ansible/multi-planet-configurations/prod.cfg
-         
-1. Update the new template file for customization. In particular it is necessary for you to indicate the SSH user 
-that Ansible will use for server access, the location of the inventory files, the location of the log files, and the 
-name of the cache folder. This can be accomplished by updating the Ansible configuration template file with the following
-information:
+Please note that you are required to provide two sets of credentials. The first credential gives you access to the Apigee
+Software download site for the purpose of downloading Apigee Software. The second credential is the license material you 
+received from Apigee that represents your license to use the Apigee software.  
 
-    | Attribute | Description |
-    | --- | --- |
-    | remote_user | This is the name of the remote SSH user that Ansible will use to connect to target nodes. Replace the template text `UPDATE_WITH_SSH_USER_NAME` with the actual SSH username. |
-    | inventory | This is the location of the folder that contains the definition of the Ansible inventory that is served by this configuration file. We recommend using the convention of naming the inventory folder the same name as the target Ansible configuration file without the file extension. Replace the template text `TARGET_ENVIRONMENT_NAME_CONVENTION` with the environment name. |
-    | fact_caching_connection | This is the location of the folder that contains the internal Ansible cache. The cache survives playbook invocations and is used to perform calculation necessary to generate configuration files required by Apigee to complete installations or configuration operations. Replace the template text `TARGET_ENVIRONMENT_NAME_CONVENTION` with the environment name. |
-    | log_path | This is the location of the Ansible logs and system output to the command line that occurs during the invocation of any playbook or ad-hoc Ansible command. Replace the template text `TARGET_ENVIRONMENT_NAME_CONVENTION` with the environment name. |
-    | private_key_file | The SSH private key that Ansible will use for SSH connection. Please validate that this attribute is set to the full path of the correct private SSH key. |
+## Update the Apigee User Name and Apigee User Password
 
-1. Ansible commands will use the Ansible configuration file once it is active. This includes Ansible ad-hoc commands. 
-Activate the Ansible configuration as follows: 
+Please update the `~/.apigee-secure/credentials.yml` file with the credentials you received credentials for the purpose 
+of downloading Apigee software. The attributes `apigee_user_name` and `apigee_user_pass` should be updated with your
+Apigee credentials. Please update the attributes in the following section near the top of the file 
+`~/.apigee-secure/credentials.yml`:
 
+        # Apigee Repo or Apigee Mirror credentials
+        apigee_repo_user: "{{ apigee_provided_or_confirmed_username }}"
+        apigee_repo_password: "{{ apigee_provided_password }}"
+  
+## License Material
 
-        export ANSIBLE_CONFIG=~/.ansible/multi-planet-configurations/prod.cfg
-    
-1. Select an inventory template that is close enough to your target environment from the folder `~/.ansible/inventory/templates`. 
-You would apply the same convention used to create the Ansible configuration file to the creation of the inventory folder 
-so that the result would conform to the pattern `~/.ansible/inventory/{{ name_of_configuration_file_without_the_extension }}`. 
-For example, suppose that you are creating a 5 node Planet inventory for the `prod.cfg` configuration file you created in 
-the prior step then the step that would give you the correct result would be 
+The OPDK Accelerator expects to find the license material in the file `~/.apigee-secure/license.txt`. It is sufficient 
+to create or update the file `~/.apigee-secure/license.txt` with a copy of the license material received from Apigee.
 
+# Credentials File
 
-        cp -r ~/.ansible/inventory/templates/edge-5/ ~/.ansible/inventory/prod/.
+The `~/.apigee/credentials.yml` file is heavily annotated. Please refer to this file to update the credentials you wish 
+use on the platform. Please note that `apigee_user_name` and `apigee_user_pass` are credentials provided by Apigee and
+should be used as provided. It is expected that the remaining credentials would be reviewed and updated accordingly.  
+
+## Edge Administrative User
+
+Please note that the initial credentials for the Edge Administrative user are set to defaults that should be considered 
+unsecure. These defaults are suitable for test scenarios that are short lived and not exposed externally. Please update
+the attributes `opdk_user_email` and `opdk_user_pass` when you are performing an installation to an environment that 
+should be secured. Please update the attributes in the following section that appear near the top of the file 
+`~/.apigee-secure/credentials.yml`:
+
+        # Edge Admin User
+        opdk_user_email: opdk@apigee.com
+        opdk_user_pass: Apigee123!
