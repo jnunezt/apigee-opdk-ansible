@@ -2,7 +2,23 @@
 
 ## Introduction
 This repository contains a set of Ansible roles and playbooks to manage the installation, 
-configuration and maintenance of Private Cloud across multiple environments. These playbooks 
+configuration and maintenance of Private Cloud across multiple environments. These playbooks
+
+## Install Ansible
+
+The Ansible installation method depends on your distribution.
+
+To install on Debian or Ubuntu from the distributor repository:
+`sudo apt install ansible`
+
+To install on Red Hat or CentOS from the distributor repository:
+`sudo yum -y install ansible`
+
+To install from pip:
+`sudo pip install ansible`
+
+Full installation details including packages for the latest Ansible release
+are available at <https://docs.ansible.com/ansible/latest/intro_installation.html>.
 
 ## Quick Start: Usage Overview
 The use of this framework is composed of the following steps:
@@ -16,7 +32,7 @@ The use of this framework is composed of the following steps:
 1. Clone this repository to `~/apigee-opdk-accelerator`.
 
 
-    git clone git@github.com:apigee/ansible-opdk-accelerator.git ~/apigee-opdk-accelerator
+    git clone https://github.com/apigee/ansible-opdk-accelerator.git ~/apigee-opdk-accelerator
     
 1. [Setup](setup#usage-instructions) an Ansible control server and workspace.
 1. Configure [Ansible and the Ansible inventory](README-ansible-configuration.md).
