@@ -25,12 +25,10 @@ The use of this framework is composed of the following steps:
 
 1. Install git, rsync, tree and pip. Assuming you are 
 
-
-    sudo yum install -y git, rsync, tree, python-pip
-    sudo pip install ansible google-auth
+    `sudo yum install -y git, rsync, tree, python-pip`
+    `sudo pip install google-auth`
 
 1. Clone this repository to `~/apigee-opdk-accelerator`.
-
 
     git clone https://github.com/apigee/ansible-opdk-accelerator.git ~/apigee-opdk-accelerator
     
