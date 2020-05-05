@@ -61,5 +61,5 @@ The use of this framework is composed of the following steps:
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
 1. Use `ansible-playbook` to [check](README-port-requirements.md) the ports.
-1. Use `ansible-playbook` to carry out an activity from either the [installations](installations).
+1. Use `ansible-playbook` to [install](README-install.md) the platform.
 
