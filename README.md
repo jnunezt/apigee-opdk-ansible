@@ -53,10 +53,9 @@ The use of this framework is composed of the following steps:
     
 1. [Setup](README-setup.md) an Ansible control server and workspace.
 1. Configure [Ansible and the Ansible inventory](README-ansible-configuration.md).
-    ## Steps to Configure Ansible OPDK Accelerator
 
-    1. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md).          
-    1. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md).
+    2. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md).          
+    2. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md).
 	
 1. Please update [credentials](README-credentials.md) and license.  
 1. Please review and update the runtime [attributes](README-runtime-attributes.md) as needed. Update common installation 
