@@ -23,12 +23,11 @@ Use `ansible-galaxy` to download dependencies in the following way:
     # Download the required roles to infrastructure the Ansible controller
     ansible-galaxy install -r requirements.yml -f
 
-## Setup an Ansible Control Server on localhost
+## Ports validation 
 
-`check.yml` will configure the localhost as an Ansible control server. This tasks assume that the user has sudo privilege 
- with no password prompt. Please invoke `check.yml` in the following way:
+Please invoke `check.yml` in the following way:
     
-    # Setup the Ansible controller
+    # Check the Ansible controller
     ansible-playbook check.yml
 
 If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
