@@ -41,7 +41,7 @@ are available at <https://docs.ansible.com/ansible/latest/intro_installation.htm
 ## Quick Start: Usage Overview
 The use of this framework is composed of the following steps:
 
-1. Install git, rsync, tree and pip. Assuming you are 
+1. Install git, rsync, tree and pip. Assuming you are.
 
     `sudo yum install -y git, rsync, tree, python-pip`
 	
@@ -62,4 +62,6 @@ The use of this framework is composed of the following steps:
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
 1. Use `ansible-playbook` to [check](README-port-requirements.md) the ports.
 1. Use `ansible-playbook` to [install](README-install.md) the platform.
+1. Use `ansible-playbook` to [install](README-install-monit.md) monit.
+1. Use `ansible-playbook` to [expand](README-install-monit.md) the platform.
 
