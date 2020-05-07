@@ -1,0 +1,12 @@
+---
+- name: Install Apigee component Monit for Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: Install Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
+    - name: Configure Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
+    - name: Start Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
