@@ -10,3 +10,63 @@
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
+
+- name: Install Apigee component Monit for Cassandra & Zookeeper
+  hosts: ds
+  tags: ['ds','zk']
+  strategy: free
+  tasks:
+    - name: Install Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
+    - name: Configure Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
+    - name: Start Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
+      
+- name: Install Apigee component Monit for Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Install Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
+    - name: Configure Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
+    - name: Start Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
+      
+- name: Install Apigee component Monit for Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: Install Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
+    - name: Configure Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
+    - name: Start Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
+      
+- name: Install Apigee component Monit for Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: Install Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
+    - name: Configure Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
+    - name: Start Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
+      
+- name: Install Apigee component Monit for Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: Install Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
+    - name: Configure Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
+    - name: Start Apigee component Monit
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
