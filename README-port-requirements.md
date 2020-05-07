@@ -14,13 +14,13 @@ containing the Ansible OPDK Accelerator. This can be accomplished as follows:
 It may be necessary to update the local repository if it has been some time since the last update.
 This can be accomplished as follows: 
 
-    cd ~/apigee-opdk-accelerator
+    cd ~/apigee-opdk-ansible
     git pull origin master
 
 ## Change Directory to the infrastructure folder
 Open the terminal and change directory to the infrastructure folder:
 
-    cd ~/apigee-opdk-ansible/infrastructure/port-requirements
+    cd ~/apigee-opdk-ansible/infrastructure/port-requirements/platform
 
 ## Download Dependencies
 Use `ansible-galaxy` to download dependencies in the following way: 
