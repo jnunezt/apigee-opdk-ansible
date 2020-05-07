@@ -120,8 +120,6 @@
     - { role: apigee-opdk-port-check, host_list: "{{ groups['ldap'] }}" }
     - { role: apigee-opdk-port-check, host_list: "{{ groups['ui'] }}" }
     - { role: apigee-opdk-port-check, host_list: "{{ groups['ds'] }}" }
-    - { role: apigee-opdk-port-check, host_list: "{{ groups['zk'] }}" }
-    - { role: apigee-opdk-port-check, host_list: "{{ groups['router'] }}" }
-    - { role: apigee-opdk-port-check, host_list: "{{ groups['mp'] }}" }
+    - { role: apigee-opdk-port-check, host_list: "{{ groups['rmp'] }}" }
     - { role: apigee-opdk-port-check, host_list: "{{ groups['qpid'] }}" }
     - { role: apigee-opdk-port-check, host_list: "{{ groups['pg'] }}" }
