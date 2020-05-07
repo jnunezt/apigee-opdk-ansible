@@ -28,7 +28,7 @@
     ports:
       - "{{ monit_ports }}"
   roles:
-    - { role: apigee-opdk-port-check, host_list: "{{ groups['zk'] }}" }
+    - { role: apigee-opdk-port-check, host_list: "{{ groups['ds'] }}" }
 
 - name: Validate that Cassandra  port requirements are met
   hosts: ds
