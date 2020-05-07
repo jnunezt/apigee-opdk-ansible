@@ -62,7 +62,7 @@ The use of this framework is composed of the following steps:
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
 1. Use `ansible-playbook` to [check](README-port-requirements-platform.md) the ports of platform.
 1. Use `ansible-playbook` to [check](README-port-requirements-monit.md) the ports of monitoring.
-1. Use `ansible-playbook` to [install](README-install.md) the platform.
+1. Use `ansible-playbook` to [install](README-install-platform.md) the platform.
 1. Use `ansible-playbook` to [install](README-install-monit.md) monit.
-1. Use `ansible-playbook` to [expand](README-install-monit.md) the platform.
+1. Use `ansible-playbook` to [expand](README-install-expand.md) the platform.
 
