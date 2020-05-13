@@ -4,8 +4,8 @@
 
   vars:
     edgemicro_name: edgemicro
-    edgemicro_version: 2.5.7
-    nodejs_version: 8.15.1
+    edgemicro_version: 3.1.4
+    nodejs_version: 12.16.3
     nodejs_package_name: "node-v{{ nodejs_version }}.pkg"
     nodejs_download_url: "https://nodejs.org/dist/v{{ nodejs_version }}/{{ nodejs_package_name }}"
     nodejs_download_destination: "{{ '~/Downloads' | expanduser }}"

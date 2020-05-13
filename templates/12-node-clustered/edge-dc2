@@ -1,0 +1,87 @@
+# Define IP addresses for list of Planet nodes
+[all]
+apigee_006 ansible_host=10.xx.xx.xx
+apigee_007 ansible_host=10.xx.xx.xx
+apigee_008 ansible_host=10.xx.xx.xx
+apigee_009 ansible_host=10.xx.xx.xx
+apigee_010 ansible_host=10.xx.xx.xx
+apigee_011 ansible_host=10.xx.xx.xx
+
+# Inventory Group for nodes that will fulfill Cassandra and Zookeeper Roles
+[dc_2_ds]
+apigee_006
+apigee_007
+apigee_008 zk_observer=true
+
+# Inventory Group for nodes that fulfill Management Server Roles
+[dc_2_ms]
+apigee_006
+
+# Inventory Group for nodes that fulfill LDAP Roles
+[dc_2_ldap]
+apigee_006
+
+# Inventory Group for nodes that fulfill UI Roles
+[dc_2_ui]
+apigee_006
+
+# Inventory Group for nodes that fulfill Router & Message Processor Roles
+[dc_2_rmp]
+apigee_00[7:8]
+
+# Inventory Group for nodes that fulfill Qpid Stack Roles
+[dc_2_qpid]
+apigee_009
+apigee_010
+
+# Inventory Group for nodes that fulfill PostgresSQL Standby Roles, if a Standby is defined
+[dc_2_pgstandby]
+apigee_011
+
+# Inventory Group for Postgres in data center, May need to be modified if no Postgres Master or Standby defined.
+[dc_2_pg:children]
+dc_2_pgstandby
+
+# Inventory Group must be removed if no Postgres Standby is defined
+[pgstandby:children]
+dc_2_pgstandby
+
+# The remainder of these inventory Group definitions are used by the playbooks and should not require modifications.
+[dc_2_edge:children]
+dc_2_ds
+dc_2_ms
+dc_2_ldap
+dc_2_ui
+dc_2_rmp
+dc_2_qpid
+dc_2_pg
+
+[planet:children]
+dc_2
+
+[dc_2:children]
+dc_2_edge
+
+[edge:children]
+dc_2_edge
+
+[ms:children]
+dc_2_ms
+
+[ui:children]
+dc_2_ui
+
+[ldap:children]
+dc_2_ldap
+
+[ds:children]
+dc_2_ds
+
+[rmp:children]
+dc_2_rmp
+
+[qpid:children]
+dc_2_qpid
+
+[pg:children]
+dc_2_pg
