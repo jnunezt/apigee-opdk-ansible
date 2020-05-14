@@ -1,19 +1,5 @@
 ---
-- name: Configure & Install Cassandra & Zookeeper - Part 1
-  hosts: ds[0]
-  gather_facts: no
-  serial: 1
-  tags: ['ds']
-  vars:
-    property_folders:
-      - "~/.apigee-secure"
-      - "~/.apigee"
-  roles:
-    - apigee-opdk-modules
-    - { role: apigee-opdk-setup-component, profile: 'ds' }
-
-
-- name: Configure & Install Cassandra & Zookeeper - Part 2
+- name: Configure & Install Cassandra & Zookeeper
   hosts: ds
   gather_facts: no
   serial: 1
