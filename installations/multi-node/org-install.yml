@@ -1,0 +1,13 @@
+---
+- name: Configure Organization and Environments
+  hosts: ms[0]
+  serial: 1
+  gather_facts: no
+  tags: ['org']
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+  roles:
+    - apigee-opdk-modules
+    - { role: apigee-opdk-setup-org }
