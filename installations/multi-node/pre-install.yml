@@ -4,8 +4,8 @@
   tags: ['os']
   vars:
     property_folders:
-    - "~/.apigee-secure"
-    - "~/.apigee"
+      - "~/.apigee-secure"
+      - "~/.apigee"
   roles:
     - { role: apigee-opdk-modules, tags: ['yum-proxy-config','minimum', 'cache', 'ds', 'ms', 'rmp', 'r', 'mp', 'qpid', 'pg', 'pgmaster', 'pgstandby', 'org', 'validate', 'validate-cleanup','os-openldap','bootstrap','common','pip','expansion'] }
     - { role: apigee-opdk-setup-os-epel, tags: ['epel'] }
@@ -26,8 +26,8 @@
   tags: ['edge', 'edge-common']
   vars:
     property_folders:
-    - "~/.apigee-secure"
-    - "~/.apigee"
+      - "~/.apigee-secure"
+      - "~/.apigee"
   roles:
     - { role: apigee-opdk-modules, tags: ['minimum', 'cache', 'license', 'ds', 'ms', 'rmp', 'r', 'mp', 'qpid', 'pg', 'pgmaster', 'pgstandby', 'org', 'validate', 'validate-cleanup','common','expansion'] }
     - { role: apigee-opdk-settings-private-address, tags: ['minimum', 'cache', 'ds', 'ms', 'rmp', 'r', 'mp', 'qpid', 'pg', 'pgmaster', 'pgstandby', 'org', 'validate', 'validate-cleanup']  }
@@ -51,8 +51,8 @@
   tags: ['response-file']
   vars:
     property_folders:
-    - "~/.apigee-secure"
-    - "~/.apigee"
+      - "~/.apigee-secure"
+      - "~/.apigee"
   roles:
     - apigee-opdk-modules
     - apigee-opdk-settings-private-address
@@ -71,8 +71,8 @@
   tags: ['copy']
   vars:
     property_folders:
-    - "~/.apigee"
-    - "~/.apigee-secure"
+      - "~/.apigee"
+      - "~/.apigee-secure"
   roles:
     - { role: apigee-opdk-modules, tags: ['license'] }
     - apigee-opdk-setup-apigee-user
