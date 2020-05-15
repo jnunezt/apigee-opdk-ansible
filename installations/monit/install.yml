@@ -11,7 +11,10 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
      
 - name: Install Apigee component Monit for LDAP
   hosts: ldap
@@ -25,7 +28,10 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
 
 - name: Install Apigee component Monit for Management Server
   hosts: ms
@@ -39,7 +45,10 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
       
 - name: Install Apigee component Monit for Edge-UI
   hosts: ui
@@ -53,7 +62,10 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
       
 - name: Install Apigee component Monit for Router
   hosts: router,rmp
@@ -67,7 +79,10 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
       
 - name: Install Apigee component Monit for Message Processor
   hosts: mp,rmp
@@ -81,7 +96,10 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
       
 - name: Install Apigee component Monit for Qpid
   hosts: qpid
@@ -95,7 +113,10 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
       
 - name: Install Apigee component Monit for Postgres
   hosts: pg
@@ -109,4 +130,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
-      command: 'cp /opt/apigee/apigee-monit/cron/apigee-monit.cron /etc/cron.d/'
+      copy:
+        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
+        dest: /etc/cron.d
+        follow: yes
