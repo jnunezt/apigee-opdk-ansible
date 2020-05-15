@@ -1,4 +1,14 @@
 ---
+- name: Cassandra & Zookeeper
+  hosts: ds
+  tags: ['ds','zk']
+  strategy: free
+  tasks:
+    - name: status Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra status'
+    - name: status Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper status'
+
 - name: Management Server
   hosts: ms
   tags: ['ms']
@@ -14,7 +24,7 @@
   tasks:
     - name: status Ldap
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap status'
-      
+
 - name: Edge-UI
   hosts: ui
   tags: ['ui']
@@ -23,16 +33,6 @@
     - name: status UI
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui status'
 
-- name: Cassandra & Zookeeper
-  hosts: ds
-  tags: ['ds','zk']
-  strategy: free
-  tasks:
-    - name: status Cassandra
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra status'
-    - name: status Zookeeper
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper status'
-      
 - name: Router
   hosts: router,rmp
   tags: ['router','r']
@@ -40,7 +40,7 @@
   tasks:
     - name: status Router
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-router status'
-      
+
 - name: Message Processor
   hosts: mp,rmp
   tags: ['mp']
