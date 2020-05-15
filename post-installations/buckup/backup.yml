@@ -1,28 +1,4 @@
 ---
-- name: Management Server
-  hosts: ms
-  tags: ['ms']
-  strategy: free
-  tasks:
-    - name: Backup Management Server
-      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server backup'
-
-- name: Ldap
-  hosts: ldap
-  tags: ['ldap']
-  strategy: free
-  tasks:
-    - name: Backup Ldap
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup'
-      
-- name: Edge-UI
-  hosts: ui
-  tags: ['ui']
-  strategy: free
-  tasks:
-    - name: Backup UI
-      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui backup'
-
 - name: Cassandra & Zookeeper
   hosts: ds
   tags: ['ds','zk']
@@ -32,6 +8,30 @@
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra backup'
     - name: Backup Zookeeper
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup'
+      
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: Backup Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup'
+
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: Backup Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server backup'
+      
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: Backup UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui backup'
       
 - name: Router
   hosts: router,rmp

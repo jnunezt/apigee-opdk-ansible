@@ -1,37 +1,4 @@
 ---
-- name: component Monit add cron Management Server
-  hosts: ms
-  tags: ['ms']
-  strategy: free
-  tasks:
-    - name: Add a line backup Management Server
-      lineinfile:
-        path: /etc/cron.d/apigee-monit.cron
-        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-management-server backup
-        create: yes
-
-- name: component Monit add cron Ldap
-  hosts: ldap
-  tags: ['ldap']
-  strategy: free
-  tasks:
-    - name: Add a line backup Ldap
-      lineinfile:
-        path: /etc/cron.d/apigee-monit.cron
-        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup
-        create: yes
-
-- name: component Monit add cron Edge-UI
-  hosts: ui
-  tags: ['ui']
-  strategy: free
-  tasks:
-    - name: Add a line backup Edge-UI
-      lineinfile:
-        path: /etc/cron.d/apigee-monit.cron
-        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-ui backup
-        create: yes
-
 - name: component Monit add cron Cassandra & Zookeeper
   hosts: ds
   tags: ['ds','zk']
@@ -46,6 +13,39 @@
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup
+        create: yes
+
+- name: component Monit add cron Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: Add a line backup Ldap
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup
+        create: yes
+
+- name: component Monit add cron Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: Add a line backup Management Server
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-management-server backup
+        create: yes
+
+- name: component Monit add cron Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: Add a line backup Edge-UI
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-ui backup
         create: yes
       
 - name: component Monit add cron Router

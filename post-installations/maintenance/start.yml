@@ -1,19 +1,13 @@
 ---
-- name: Cassandra
+- name: Cassandra & Zookeeper
   hosts: ds
-  tags: ['ds']
+  tags: ['ds','zk']
   strategy: free
   tasks:
     - name: status Cassandra
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra start'
     - name: Wait for Cassandra
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra wait_for_ready'
-      
-- name: Zookeeper
-  hosts: ds
-  tags: ['zk']
-  strategy: free
-  tasks:
     - name: status Zookeeper
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper start'
     - name: Wait for Zookeeper
