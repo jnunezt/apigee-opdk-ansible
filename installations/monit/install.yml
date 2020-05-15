@@ -11,6 +11,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
@@ -28,6 +29,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
@@ -45,6 +47,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
@@ -62,6 +65,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
@@ -79,6 +83,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
@@ -96,6 +101,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
@@ -113,6 +119,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
@@ -130,6 +137,7 @@
     - name: Start Apigee component Monit
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
     - name: Auto-Start Apigee component Monit
+      become: yes
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
