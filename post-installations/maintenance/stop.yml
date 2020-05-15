@@ -1,0 +1,76 @@
+---
+- name: Cassandra
+  hosts: ds
+  tags: ['ds']
+  strategy: free
+  tasks:
+    - name: stop Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra stop'
+
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
+    - name: stop Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper stop'
+      
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: stop Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap stop'
+
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: stop Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server stop'
+
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: stop UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui stop'
+
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: stop Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router stop'
+
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: stop Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor stop'
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: stop Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd stop'
+    - name: stop Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server stop'
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: stop Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql stop'
+    - name: stop Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server stop'

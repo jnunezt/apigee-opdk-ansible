@@ -1,0 +1,98 @@
+---
+- name: Cassandra
+  hosts: ds
+  tags: ['ds']
+  strategy: free
+  tasks:
+    - name: status Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra start'
+    - name: Wait for Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra wait_for_ready'
+      
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
+    - name: status Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper start'
+    - name: Wait for Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper wait_for_ready'
+
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: status Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap start'
+    - name: Wait for Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap wait_for_ready'
+
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: status Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server start'
+    - name: Wait for Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server wait_for_ready'
+
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: status UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui start'
+    - name: Wait UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui wait_for_ready'
+
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: status Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router start'
+    - name: Wait for Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router wait_for_ready'
+
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: status Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor start'
+    - name: Wait for Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor wait_for_ready'
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: status Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd start'
+    - name: Wait for Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd wait_for_ready'
+    - name: status Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server start'
+    - name: Wait for Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server wait_for_ready'
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: status Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql start'
+    - name: Wait for Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql wait_for_ready'
+    - name: status Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server start'
+    - name: Wait for Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server wait_for_ready'
