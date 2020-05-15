@@ -5,11 +5,13 @@
   strategy: free
   tasks:
     - name: Add a line backup Cassandra
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-cassandra backup
         create: yes
     - name: Add a line backup Zookeeper
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup
@@ -21,6 +23,7 @@
   strategy: free
   tasks:
     - name: Add a line backup Ldap
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup
@@ -32,6 +35,7 @@
   strategy: free
   tasks:
     - name: Add a line backup Management Server
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-management-server backup
@@ -43,6 +47,7 @@
   strategy: free
   tasks:
     - name: Add a line backup Edge-UI
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-ui backup
@@ -54,6 +59,7 @@
   strategy: free
   tasks:
     - name: Add a line backup
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-router backup
@@ -65,6 +71,7 @@
   strategy: free
   tasks:
     - name: Add a line backup
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-message-processor backup
@@ -76,11 +83,13 @@
   strategy: free
   tasks:
     - name: Add a line backup Qpid
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-qpidd backup
         create: yes
     - name: Add a line backup Qpid Server
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-qpid-server backup
@@ -92,11 +101,13 @@
   strategy: free
   tasks:
     - name: Add a line backup
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-postgresql backup
         create: yes
     - name: Add a line backup
+      become: yes
       lineinfile:
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-postgres-server backup
