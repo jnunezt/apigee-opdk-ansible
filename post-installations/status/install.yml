@@ -1,0 +1,70 @@
+---
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: status Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server status'
+
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: status Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap status'
+      
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: status UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui status'
+
+- name: Cassandra & Zookeeper
+  hosts: ds
+  tags: ['ds','zk']
+  strategy: free
+  tasks:
+    - name: status Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra status'
+    - name: status Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper status'
+      
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: status Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router status'
+      
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: status Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor status'
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: status Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd status'
+    - name: status Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server status'
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: status Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql status'
+    - name: status Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server status'
