@@ -1,0 +1,103 @@
+---
+- name: component Monit add cron Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: Add a line backup Management Server
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-management-server backup
+        create: yes
+
+- name: component Monit add cron Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: Add a line backup Ldap
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup
+        create: yes
+
+- name: component Monit add cron Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: Add a line backup Edge-UI
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-ui backup
+        create: yes
+
+- name: component Monit add cron Cassandra & Zookeeper
+  hosts: ds
+  tags: ['ds','zk']
+  strategy: free
+  tasks:
+    - name: Add a line backup Cassandra
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-cassandra backup
+        create: yes
+    - name: Add a line backup Zookeeper
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup
+        create: yes
+      
+- name: component Monit add cron Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Add a line backup
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-router backup
+        create: yes
+      
+- name: component Monit add cron Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: Add a line backup
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-message-processor backup
+        create: yes
+      
+- name: component Monit add cron Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: Add a line backup Qpid
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-qpidd backup
+        create: yes
+    - name: Add a line backup Qpid Server
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-qpid-server backup
+        create: yes
+      
+- name: component Monit add cron Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: Add a line backup
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-postgresql backup
+        create: yes
+    - name: Add a line backup
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-postgres-server backup
+        create: yes

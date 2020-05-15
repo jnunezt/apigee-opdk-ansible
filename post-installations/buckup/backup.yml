@@ -1,0 +1,70 @@
+---
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: Backup Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server backup'
+
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: Backup Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup'
+      
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: Backup UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui backup'
+
+- name: Cassandra & Zookeeper
+  hosts: ds
+  tags: ['ds','zk']
+  strategy: free
+  tasks:
+    - name: Backup Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra backup'
+    - name: Backup Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup'
+      
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Backup Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router backup'
+      
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: Backup Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor backup'
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: Backup Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd backup'
+    - name: Backup Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server backup'
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: Backup Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql backup'
+    - name: Backup Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server backup'
