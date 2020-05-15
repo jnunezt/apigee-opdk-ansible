@@ -14,7 +14,7 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
      
 - name: Install Apigee component Monit for LDAP
   hosts: ldap
@@ -31,7 +31,7 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
 
 - name: Install Apigee component Monit for Management Server
   hosts: ms
@@ -48,7 +48,7 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
       
 - name: Install Apigee component Monit for Edge-UI
   hosts: ui
@@ -65,7 +65,7 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
       
 - name: Install Apigee component Monit for Router
   hosts: router,rmp
@@ -82,7 +82,7 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
       
 - name: Install Apigee component Monit for Message Processor
   hosts: mp,rmp
@@ -99,7 +99,7 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
       
 - name: Install Apigee component Monit for Qpid
   hosts: qpid
@@ -116,7 +116,7 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
       
 - name: Install Apigee component Monit for Postgres
   hosts: pg
@@ -133,4 +133,4 @@
       copy:
         src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
         dest: /etc/cron.d
-        follow: yes
+        remote_src: yes
