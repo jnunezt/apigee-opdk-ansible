@@ -1,12 +1,18 @@
 ---
-- name: Cassandra & Zookeeper
+- name: Cassandra
   hosts: ds
-  tags: ['ds','zk']
+  tags: ['ds']
   strategy: free
   tasks:
-    - name: stop Cassandra
+    - name: Stop Cassandra
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra stop'
-    - name: stop Zookeeper
+      
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
+    - name: Stop Zookeeper
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper stop'
       
 - name: Ldap
@@ -14,7 +20,7 @@
   tags: ['ldap']
   strategy: free
   tasks:
-    - name: stop Ldap
+    - name: Stop Ldap
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap stop'
 
 - name: Management Server
@@ -22,7 +28,7 @@
   tags: ['ms']
   strategy: free
   tasks:
-    - name: stop Management Server
+    - name: Stop Management Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server stop'
 
 - name: Edge-UI
@@ -30,7 +36,7 @@
   tags: ['ui']
   strategy: free
   tasks:
-    - name: stop UI
+    - name: Stop UI
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui stop'
 
 - name: Router
@@ -38,7 +44,7 @@
   tags: ['router','r']
   strategy: free
   tasks:
-    - name: stop Router
+    - name: Stop Router
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-router stop'
 
 - name: Message Processor
@@ -46,7 +52,7 @@
   tags: ['mp']
   strategy: free
   tasks:
-    - name: stop Message Processor
+    - name: Stop Message Processor
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor stop'
       
 - name: Qpid
@@ -54,9 +60,9 @@
   tags: ['qpid']
   strategy: free
   tasks:
-    - name: stop Qpid
+    - name: Stop Qpid
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd stop'
-    - name: stop Qpid Server
+    - name: Stop Qpid Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server stop'
       
 - name: Postgres
@@ -64,7 +70,7 @@
   tags: ['pg']
   strategy: free
   tasks:
-    - name: stop Postgres
+    - name: Stop Postgres
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql stop'
-    - name: stop Postgres Server
+    - name: Stop Postgres Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server stop'

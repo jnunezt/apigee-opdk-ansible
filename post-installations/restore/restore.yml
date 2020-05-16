@@ -1,0 +1,252 @@
+---
+- name: Cassandra
+  hosts: ds
+  tags: ['ds']
+  strategy: free
+  tasks:
+    - name: Stop Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra stop'
+    - name: Remove Data Cassandra
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-cassandra
+        state: absent
+    - name: Remove Data Cassandra
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-cassandra.d
+        state: absent
+    - name: Restore Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra restore'
+    - name: Start Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra start'
+    - name: Wait for Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra wait_for_ready'
+
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
+    - name: Stop Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper stop'
+    - name: Remove Data Zookeeper
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-zookeeper
+        state: absent
+    - name: Remove Data Zookeeper
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-zookeeper.d
+        state: absent
+    - name: Restore Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper restore'
+    - name: Start Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper start'
+    - name: Wait for Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper wait_for_ready'
+      
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: Stop Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap stop'
+    - name: Remove Data Ldap
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-openldap
+        state: absent
+    - name: Remove Data Ldap
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-openldap.d
+        state: absent
+    - name: Restore Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap restore'
+    - name: Start Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap start'
+    - name: Wait for Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap wait_for_ready'
+
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: Stop Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server stop'
+    - name: Remove Data Management Server
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-management-server
+        state: absent
+    - name: Remove Data Management Server
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-management-server.d
+        state: absent
+    - name: Restore Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server restore'
+    - name: Start Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server start'
+    - name: Wait for Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server wait_for_ready'
+      
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: Stop UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui stop'
+    - name: Remove Data Edge-UI
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-ui
+        state: absent
+    - name: Remove Data Edge-UI
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-ui.d
+        state: absent
+    - name: Restore Edge-UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui restore'
+    - name: Start UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui start'
+    - name: Wait UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui wait_for_ready'
+      
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Stop Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router stop'
+    - name: Remove Data Router
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-router
+        state: absent
+    - name: Remove Data Router
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-router.d
+        state: absent
+    - name: Restore Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router restore'
+    - name: Start Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router start'
+    - name: Wait for Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router wait_for_ready'
+      
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: Stop Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor stop'
+    - name: Remove Data Message Processor
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-message-processor
+        state: absent
+    - name: Remove Data Message Processor
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-message-processor.d
+        state: absent
+    - name: Restore Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor restore'
+    - name: Start Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor start'
+    - name: Wait for Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor wait_for_ready'
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: Stop Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd stop'
+    - name: Stop Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server stop'
+    - name: Remove Data Qpid
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-qpidd
+        state: absent
+    - name: Remove Data Qpid
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-qpidd.d
+        state: absent
+    - name: Restore Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd restore'
+    - name: Start Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd start'
+    - name: Wait for Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd wait_for_ready'
+    - name: Remove Data Qpid Server
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-qpid-server
+        state: absent
+    - name: Remove Data Qpid Server
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-qpid-server.d
+        state: absent
+    - name: Restore Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server restore'
+    - name: Start Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server start'
+    - name: Wait for Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server wait_for_ready'
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: Stop Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql stop'
+    - name: Stop Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server stop'
+    - name: Remove Data Postgres
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-postgresql
+        state: absent
+    - name: Remove Data Postgres
+      become: yes
+      file:
+        path: /opt/apigee/data/apigee-postgresql.d
+        state: absent
+    - name: Restore Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql restore'
+    - name: Start Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql start'
+    - name: Wait for Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql wait_for_ready'
+    - name: Remove Data Postgres Server
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-postgres-server
+        state: absent
+    - name: Remove Data Postgres Server
+      become: yes
+      file:
+        path: /opt/apigee/data/edge-postgres-server.d
+        state: absent
+    - name: Restore Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server restore'
+    - name: Start Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server start'
+    - name: Wait for Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server wait_for_ready'

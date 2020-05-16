@@ -1,11 +1,17 @@
 ---
-- name: Cassandra & Zookeeper
+- name: Cassandra
   hosts: ds
-  tags: ['ds','zk']
+  tags: ['ds']
   strategy: free
   tasks:
     - name: Backup Cassandra
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra backup'
+      
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
     - name: Backup Zookeeper
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup'
       

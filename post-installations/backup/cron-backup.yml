@@ -1,7 +1,7 @@
 ---
-- name: component Monit add cron Cassandra & Zookeeper
+- name: Component Monit add cron Cassandra
   hosts: ds
-  tags: ['ds','zk']
+  tags: ['ds']
   strategy: free
   tasks:
     - name: Add a line backup Cassandra
@@ -10,6 +10,12 @@
         path: /etc/cron.d/apigee-monit.cron
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-cassandra backup
         create: yes
+
+- name: Component Monit add cron Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
     - name: Add a line backup Zookeeper
       become: yes
       lineinfile:
@@ -17,7 +23,7 @@
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup
         create: yes
 
-- name: component Monit add cron Ldap
+- name: Component Monit add cron Ldap
   hosts: ldap
   tags: ['ldap']
   strategy: free
@@ -29,7 +35,7 @@
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup
         create: yes
 
-- name: component Monit add cron Management Server
+- name: Component Monit add cron Management Server
   hosts: ms
   tags: ['ms']
   strategy: free
@@ -41,7 +47,7 @@
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-management-server backup
         create: yes
 
-- name: component Monit add cron Edge-UI
+- name: Component Monit add cron Edge-UI
   hosts: ui
   tags: ['ui']
   strategy: free
@@ -53,7 +59,7 @@
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-ui backup
         create: yes
       
-- name: component Monit add cron Router
+- name: Component Monit add cron Router
   hosts: router,rmp
   tags: ['router','r']
   strategy: free
@@ -65,7 +71,7 @@
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-router backup
         create: yes
       
-- name: component Monit add cron Message Processor
+- name: Component Monit add cron Message Processor
   hosts: mp,rmp
   tags: ['mp']
   strategy: free
@@ -77,7 +83,7 @@
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-message-processor backup
         create: yes
       
-- name: component Monit add cron Qpid
+- name: Component Monit add cron Qpid
   hosts: qpid
   tags: ['qpid']
   strategy: free
@@ -95,7 +101,7 @@
         line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-service edge-qpid-server backup
         create: yes
       
-- name: component Monit add cron Postgres
+- name: Component Monit add cron Postgres
   hosts: pg
   tags: ['pg']
   strategy: free
