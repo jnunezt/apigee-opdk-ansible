@@ -5,10 +5,8 @@
   strategy: free
   tasks:
     - name: Backup Cassandra
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra backup'
     - name: Backup Zookeeper
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper backup'
       
 - name: Ldap
@@ -17,7 +15,6 @@
   strategy: free
   tasks:
     - name: Backup Ldap
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap backup'
 
 - name: Management Server
@@ -26,7 +23,6 @@
   strategy: free
   tasks:
     - name: Backup Management Server
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server backup'
       
 - name: Edge-UI
@@ -35,7 +31,6 @@
   strategy: free
   tasks:
     - name: Backup UI
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui backup'
       
 - name: Router
@@ -44,7 +39,6 @@
   strategy: free
   tasks:
     - name: Backup Router
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-router backup'
       
 - name: Message Processor
@@ -53,7 +47,6 @@
   strategy: free
   tasks:
     - name: Backup Message Processor
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor backup'
       
 - name: Qpid
@@ -62,10 +55,8 @@
   strategy: free
   tasks:
     - name: Backup Qpid
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd backup'
     - name: Backup Qpid Server
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server backup'
       
 - name: Postgres
@@ -74,8 +65,6 @@
   strategy: free
   tasks:
     - name: Backup Postgres
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql backup'
     - name: Backup Postgres Server
-      become: yes
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server backup'
