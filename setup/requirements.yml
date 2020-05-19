@@ -1,0 +1,3 @@
+---
+- src: https://github.com/chronos085/apigee-opdk-setup-ansible-controller.git
+- src: https://github.com/chronos085/apigee-opdk-modules.git
