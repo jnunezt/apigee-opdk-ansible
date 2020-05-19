@@ -1,15 +1,15 @@
 ---
 # Ansible Roles for Creating and Configuring Orgs
-- src: https://github.com/carlosfrias/apigee-opdk-setup-org-config.git
+- src: https://github.com/chronos085/apigee-opdk-setup-org-config.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-setup-org.git
+- src: https://github.com/chronos085/apigee-opdk-setup-org.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-setup-validate.git
+- src: https://github.com/chronos085/apigee-opdk-setup-validate.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-setup-validate-cleanup.git
+- src: https://github.com/chronos085/apigee-opdk-setup-validate-cleanup.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-cwc-update.git
+- src: https://github.com/chronos085/apigee-opdk-cwc-update.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-update-component-qpidd.git
+- src: https://github.com/chronos085/apigee-opdk-update-component-qpidd.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-settings-response-file.git
+- src: https://github.com/chronos085/apigee-opdk-settings-response-file.git
