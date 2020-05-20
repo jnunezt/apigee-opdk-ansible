@@ -3,142 +3,54 @@
   hosts: ds
   tags: ['ds','zk']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
      
 - name: Install Apigee component Monit for LDAP
   hosts: ldap
   tags: ['ldap']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
 
 - name: Install Apigee component Monit for Management Server
   hosts: ms
   tags: ['ms']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
       
 - name: Install Apigee component Monit for Edge-UI
   hosts: ui
   tags: ['ui']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
       
 - name: Install Apigee component Monit for Router
   hosts: router,rmp
   tags: ['router','r']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
       
 - name: Install Apigee component Monit for Message Processor
   hosts: mp,rmp
   tags: ['mp']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
       
 - name: Install Apigee component Monit for Qpid
   hosts: qpid
   tags: ['qpid']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
       
 - name: Install Apigee component Monit for Postgres
   hosts: pg
   tags: ['pg']
   strategy: free
-  tasks:
-    - name: Install Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit install'
-    - name: Configure Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit configure'
-    - name: Start Apigee component Monit
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-monit start'
-    - name: Auto-Start Apigee component Monit
-      become: yes
-      copy:
-        src: /opt/apigee/apigee-monit/cron/apigee-monit.cron
-        dest: /etc/cron.d
-        remote_src: yes
+  roles:
+    - apigee-opdk-setup-monit-install
