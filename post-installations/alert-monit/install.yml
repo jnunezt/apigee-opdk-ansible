@@ -1,0 +1,56 @@
+---
+- name: Alert Apigee component Monit for Cassandra & Zookeeper
+  hosts: ds
+  tags: ['ds','zk']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
+     
+- name: Alert Apigee component Monit for LDAP
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
+
+- name: Alert Apigee component Monit for Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
+      
+- name: Alert Apigee component Monit for Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
+      
+- name: Alert Apigee component Monit for Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
+      
+- name: Alert Apigee component Monit for Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
+      
+- name: Alert Apigee component Monit for Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
+      
+- name: Alert Apigee component Monit for Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-monit-alert
