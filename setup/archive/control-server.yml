@@ -1,0 +1,32 @@
+---
+- hosts: '{{ hosts }}'
+  become: yes
+  vars_files:
+  - custom-properties.yml
+  tasks:
+  - name: Install system packages
+    yum :
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - gcc
+
+  - name: Create pip config folder
+    file:
+      path: "{{ pip_conf_dir }}"
+      state: directory
+
+  - name: Configure pip
+    template:
+      src: resources/pip.conf.j2
+      dest: "{{ pip_conf_dir }}/pip.conf"
+    when: pip_conf_dir is defined and pip_index_url is defined
+
+  - name: Install pip packages
+    pip:
+      name: '{{ item }}'
+      state: latest
+    register: result
+    with_items:
+    - pip
+    - ansible
