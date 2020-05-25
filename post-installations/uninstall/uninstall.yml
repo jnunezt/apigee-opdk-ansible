@@ -1,14 +1,7 @@
 ---
-- name: Cassandra
+- name: Cassandra & Zookeeper
   hosts: ds
-  tags: ['ds']
-  strategy: free
-  roles:
-    - apigee-opdk-setup-component-uninstall
-
-- name: Zookeeper
-  hosts: ds
-  tags: ['zk']
+  tags: ['ds','zk']
   strategy: free
   roles:
     - apigee-opdk-setup-component-uninstall
