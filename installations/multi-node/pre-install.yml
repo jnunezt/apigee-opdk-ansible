@@ -44,6 +44,25 @@
     - { role: apigee-opdk-setup-component-install, component: 'apigee-setup', tags: ['minimum', 'setup', 'apigee-component-install', 'apigee-pre-req','common-install', 'common'] }
     - { role: apigee-opdk-setup-apigee-user-ownership, tags: ['minimum', 'apigee-user','ownership', 'apigee-pre-req','common-install', 'common'] }
   
+- name: Collect Configuration Information for Planet
+  hosts: edge
+  strategy: free
+  tags: ['cache']
+  vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
+  roles:
+  - apigee-opdk-modules
+  - apigee-opdk-settings-private-address
+  - apigee-opdk-settings-management-server
+  - apigee-opdk-settings-region
+  - apigee-opdk-settings-response-file
+  - apigee-opdk-settings-ldap
+  - apigee-opdk-settings-cassandra
+  - apigee-opdk-settings-postgres
+
+
 - name: Generate Configuration for Planet
   hosts: ms
   gather_facts: no
@@ -51,8 +70,8 @@
   tags: ['response-file']
   vars:
     property_folders:
-      - "~/.apigee-secure"
-      - "~/.apigee"
+    - "~/.apigee-secure"
+    - "~/.apigee"
   roles:
     - apigee-opdk-modules
     - apigee-opdk-settings-private-address
@@ -71,8 +90,8 @@
   tags: ['copy']
   vars:
     property_folders:
-      - "~/.apigee"
-      - "~/.apigee-secure"
+    - "~/.apigee"
+    - "~/.apigee-secure"
   roles:
     - { role: apigee-opdk-modules, tags: ['license'] }
     - apigee-opdk-setup-apigee-user
