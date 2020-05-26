@@ -23,8 +23,12 @@ used by this playbook. You can use `ansible-galaxy` in the following way:
 
     cd installations/{{ multi-node }}
     ansible-galaxy install -r requirements.yml -f
+	
+Once the roles are installed you can invoke the pre install process as follows:
+
+    ansible-playbook pre-install.yml
     
-Once the roles are installed you can invoke the install process as follows:
+Once the pre install are installed you can invoke the install process as follows:
 
     ansible-playbook install.yml
 
@@ -48,12 +52,11 @@ not listed here will function.
 
 | Tag Name | Description |
 | --- | --- |
-| minimum | Installs without performing any validation on the operating system and minimally verifying that components actually installed. This is the fastest installation available with this framework. |
 | cache | Updates the local Ansible cache with OPDK variables that are used for the generation of configuration files. |
 | os | Prepares the operating system for the installation of OPDK as covered in the [Edge Installation Overview](https://docs.apigee.com/private-cloud/latest/installation-overview) and [Install the Edge Apigee Setup Utility](https://docs.apigee.com/private-cloud/latest/install-edge-apigee-setup-utility). This covers operating system packages, updates to system configuration files and adapts to operating systems. |
-| bootstrap | Install the Apigee bootstrap. This adapts to either [online](https://docs.apigee.com/private-cloud/latest/install-edge-apigee-setup-utility#installedgeapigeesetuputilityonanodewithanexternalinternetconnection) or [offline](https://docs.apigee.com/private-cloud/latest/install-edge-apigee-setup-utility#installedgeapigeesetuputilityonanodewithnoexternalinternetconnection) |
-| common | Install [common](https://docs.apigee.com/private-cloud/latest/install-edge-apigee-setup-utility) Apigee components used on all nodes. This does not include operating system packages |
-| config | Generate the [Edge Configuration File](https://docs.apigee.com/private-cloud/latest/edge-configuration-file-reference) |
+| edge | Install Apigee components used on all nodes. |
+| response-file | Generate the [Edge Configuration File](https://docs.apigee.com/private-cloud/latest/edge-configuration-file-reference) on all nodes |
+| copy | Copy the [Edge Configuration File](https://docs.apigee.com/private-cloud/latest/edge-configuration-file-reference) |
 | ds | Install the [ds](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | ms | Install the [ms](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | rmp | Install the [rmp](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
@@ -61,4 +64,3 @@ not listed here will function.
 | mp | Install the [mp](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | qpid | Install the [qs](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | pg | Install the [ps](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile |
-| org | [Onboard an organization](https://docs.apigee.com/private-cloud/latest/onboard-organization) |
