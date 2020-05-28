@@ -9,7 +9,6 @@ and the contained README. This folder contains Ansible playbooks that will insta
 | [Apigee Edge](multi-node) | Installs a multi-node and multi-region Apigee Edge planet |
 | [Apigee Developer Portal](devportal) | Installs Apigee Developer Portal |
 | [Apigee Microgateway](edge-microgateway) | Installs Apigee Microgateway |
-| [Apigee Monit](monit) | Installs Apigee Monit |
 
 ## Assumptions
 
@@ -48,11 +47,6 @@ not listed here will function.
 
 | Tag Name | Description |
 | --- | --- |
-| cache | Updates the local Ansible cache with OPDK variables that are used for the generation of configuration files. |
-| os | Prepares the operating system for the installation of OPDK as covered in the [Edge Installation Overview](https://docs.apigee.com/private-cloud/latest/installation-overview) and [Install the Edge Apigee Setup Utility](https://docs.apigee.com/private-cloud/latest/install-edge-apigee-setup-utility). This covers operating system packages, updates to system configuration files and adapts to operating systems. |
-| edge | Install Apigee components used on all nodes. |
-| response-file | Generate the [Edge Configuration File](https://docs.apigee.com/private-cloud/latest/edge-configuration-file-reference) on all nodes |
-| copy | Copy the [Edge Configuration File](https://docs.apigee.com/private-cloud/latest/edge-configuration-file-reference) |
 | ds | Install the [ds](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | ms | Install the [ms](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | rmp | Install the [rmp](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
