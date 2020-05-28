@@ -1,12 +1,4 @@
 ---
-- name: backup for planet
-  hosts: edge
-  tags: ['all']
-  strategy: free
-  tasks:
-    - name: Backup Edge
-      command: '/opt/apigee/apigee-service/bin/apigee-all backup'
-
 - name: Cassandra
   hosts: ds
   tags: ['ds']
