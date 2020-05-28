@@ -51,7 +51,7 @@ The use of this framework is composed of the following steps:
 
     git clone https://github.com/chronos085/apigee-opdk-ansible.git ~/apigee-opdk-accelerator
     
-1. [Setup](setup/README-setup.md) an Ansible control server and workspace.
+1. [Setup](README-setup.md) an Ansible control server and workspace.
 1. Configure Ansible and the Ansible inventory:
 
     1. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md).          
@@ -60,6 +60,7 @@ The use of this framework is composed of the following steps:
 1. Please update [credentials](README-credentials.md) and license.  
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
+1. Use `ansible-playbook` to [uninstall](post-installations/README-uninstall-platform.md) in case you need to clean the node (s) of other previous installations.
 1. Use `ansible-playbook` to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md) the platform.
 1. Use `ansible-playbook` to [check](infrastructure/port-requirements/README-port-requirements-platform.md) the ports of platform.
 1. Use `ansible-playbook` to [install](installations/README-install-platform.md) the platform.
