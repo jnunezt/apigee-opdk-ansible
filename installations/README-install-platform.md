@@ -54,3 +54,7 @@ not listed here will function.
 | mp | Install the [mp](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | qpid | Install the [qs](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
 | pg | Install the [ps](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile |
+
+## Next Steps
+
+Please continue with the [next steps](README.md#usage-overview) in the process.
