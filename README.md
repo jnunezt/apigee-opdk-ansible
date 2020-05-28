@@ -60,8 +60,7 @@ The use of this framework is composed of the following steps:
 1. Please update [credentials](README-credentials.md) and license.  
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
-1. Use `ansible-playbook` to [check](README-port-requirements-platform.md) the ports of platform.
-1. Use `ansible-playbook` to [check](README-port-requirements-monit.md) the ports of monitoring.
+1. Use `ansible-playbook` to [check](README-port-requirements-platform.md) the ports of platform (you must install the prerequisites before).
 1. Use `ansible-playbook` to [install](README-install-platform.md) the platform.
 1. Use `ansible-playbook` to [install](README-install-monit.md) monit.
 1. Use `ansible-playbook` to [expand](README-install-expand.md) the platform.
