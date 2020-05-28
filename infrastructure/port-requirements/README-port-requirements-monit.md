@@ -1,9 +1,5 @@
 # Usage Instructions
 
-##Clone this repository to `~/apigee-opdk-ansible`.
-
-    git clone https://github.com/chronos085/apigee-opdk-ansible.git ~/apigee-opdk-ansible
-	
 ## Terminal Window
 These scripts can be run from a terminal window. Please open your terminal and navigate to the folder
 containing the Ansible OPDK Accelerator. This can be accomplished as follows: 
