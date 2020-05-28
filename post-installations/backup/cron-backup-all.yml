@@ -1,0 +1,12 @@
+---
+- name: backup for planet
+  hosts: edge
+  tags: ['all']
+  strategy: free
+  tasks:
+    - name: Add a line backup Cassandra
+      become: yes
+      lineinfile:
+        path: /etc/cron.d/apigee-monit.cron
+        line: 00 01 * * * root /opt/apigee/apigee-service/bin/apigee-all backup
+        create: yes
