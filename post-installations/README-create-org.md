@@ -29,11 +29,11 @@ Use `ansible-galaxy` to download dependencies in the following way:
 Please invoke `install.yml` in the following way:
     
     # Check the Ansible controller
-    ansible-playbook install.yml
+    ansible-playbook install-{org}.yml
 
 If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
 
-    ansible-playbook install.yml -K
+    ansible-playbook install-{org}.yml -K
     
 
 ## Next Steps

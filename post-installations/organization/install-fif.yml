@@ -10,4 +10,4 @@
       - "~/.apigee"
   roles:
     - apigee-opdk-modules
-    - { role: apigee-opdk-setup-org, org_name: '{org}', env_name: '{env}', virtual_host_alias: '{dns}', virtual_host_port: '{port}', virtual_host_name: '{name}' }
+    - { role: apigee-opdk-setup-org, org_name: 'fif', env_name: 'uat', virtual_host_alias: 'api.fif.cl', virtual_host_port: '80', virtual_host_name: 'default' }
