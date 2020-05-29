@@ -18,6 +18,16 @@ Open the terminal and change directory to the infrastructure folder:
 
     cd ~/apigee-opdk-accelerator/post-installations/organization
 
+## Copy Template
+Copy template to generate installer by organization
+
+    cp template.yml install-{org}.yml
+	
+## Edit installer
+Edit parameters in the yml role for the new organization
+
+    vi install-{org}.yml
+
 ## Download Dependencies
 Use `ansible-galaxy` to download dependencies in the following way: 
 
