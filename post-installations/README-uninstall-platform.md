@@ -18,7 +18,7 @@ We have created an `ansible-galaxy` requirements file `requirements.yml` that wi
 used by this playbook. You can use `ansible-galaxy` in the following way:
 
 
-    cd post-installations/uninstall
+    cd ~/apigee-opdk-accelerator/post-installations/uninstall
     ansible-galaxy install -r requirements.yml -f
     
 Once the roles are installed you can invoke the uninstall process as follows:
