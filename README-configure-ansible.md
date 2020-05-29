@@ -33,5 +33,5 @@ so that the result would conform to the pattern `~/.ansible/inventory/{{ name_of
 For example, suppose that you are creating a 5 node Planet inventory for the `prod.cfg` configuration file you created in 
 the prior step then the step that would give you the correct result would be 
 
-
+        mkdir ~/.ansible/inventory/prod
         cp -r ~/.ansible/inventory/templates/edge-5/ ~/.ansible/inventory/prod/.
