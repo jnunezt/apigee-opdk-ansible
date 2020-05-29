@@ -16,11 +16,9 @@ and the contained README. This folder contains Ansible playbooks that will insta
 1. [Activate an Ansible Configuration](../README-configure-ansible.md) has been completed.
 
 ## Basic Usage
-We have created an `ansible-galaxy` requirements file `requirements.yml` that will download and install the roles 
-used by this playbook. You can use `ansible-galaxy` in the following way:
+Open the terminal and change directory to the installations folder:
 
     cd ~/apigee-opdk-accelerator/installations/{{ type infrastructure }}/install/{{ type installation }}
-    ansible-galaxy install -r requirements.yml -f
     
 Once the roles are installed you can invoke the install process as follows:
 
