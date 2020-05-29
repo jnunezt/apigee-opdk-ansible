@@ -18,8 +18,8 @@ Apigee credentials. Please update the attributes in the following section near t
 `~/.apigee-secure/credentials.yml`:
 
         # Apigee Repo or Apigee Mirror credentials
-        apigee_repo_user: "{{ apigee_provided_or_confirmed_username }}"
-        apigee_repo_password: "{{ apigee_provided_password }}"
+        apigee_repo_user: "APIGEE_PROVIDED_USER"
+        apigee_repo_password: "APIGEE_PROVIDED_PASSWORD"
   
 ## License Material
 
