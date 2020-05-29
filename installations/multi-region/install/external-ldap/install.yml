@@ -13,6 +13,19 @@
     - { role: apigee-opdk-setup-component, profile: 'ds' }
 
 - name: Configure & Install Management Server
+  hosts: ldap
+  gather_facts: no
+  serial: 1
+  tags: ['ldap']
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+  roles:
+    - apigee-opdk-modules
+    - { role: apigee-opdk-setup-component, profile: 'ld', tags: ['ldap'] }
+
+- name: Configure & Install Management Server
   hosts: ms
   gather_facts: no
   serial: 1
