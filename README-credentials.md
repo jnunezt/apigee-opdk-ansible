@@ -43,3 +43,7 @@ should be secured. Please update the attributes in the following section that ap
         # Edge Admin User
         opdk_user_email: opdk@apigee.com
         opdk_user_pass: Apigee123!
+		
+## Next Steps
+
+Please continue with the [next steps](README.md#usage-overview) in the process.
