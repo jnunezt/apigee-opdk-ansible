@@ -1,27 +1,10 @@
 # Usage Instructions
 
-## Terminal Window
-These scripts can be run from a terminal window. Please open your terminal and navigate to the folder
-containing the Ansible OPDK Accelerator. This can be accomplished as follows: 
-
-    cd ~/apigee-opdk-ansible
-
-## Refresh Local Repository
-It may be necessary to update the local repository if it has been some time since the last update.
-This can be accomplished as follows: 
-
-    cd ~/apigee-opdk-ansible
-    git pull origin master
-
-## Change Directory to the infrastructure folder
-Open the terminal and change directory to the infrastructure folder:
+## Basic Usage
+We have created an `ansible-galaxy` requirements file `requirements.yml` that will download and install the roles 
+used by this playbook. You can use `ansible-galaxy` in the following way:
 
     cd ~/apigee-opdk-ansible/infrastructure/port-requirements/monit
-
-## Download Dependencies
-Use `ansible-galaxy` to download dependencies in the following way: 
-
-    # Download the required roles to infrastructure the Ansible controller
     ansible-galaxy install -r requirements.yml -f
 
 ## Ports validation 

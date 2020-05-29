@@ -19,7 +19,6 @@ and the contained README. This folder contains Ansible playbooks that will insta
 We have created an `ansible-galaxy` requirements file `requirements.yml` that will download and install the roles 
 used by this playbook. You can use `ansible-galaxy` in the following way:
 
-
     cd ~/apigee-opdk-accelerator/installations/{{ type infrastructure }}/install/{{ type installation }}
     ansible-galaxy install -r requirements.yml -f
     
