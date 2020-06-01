@@ -65,5 +65,6 @@ attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.ym
 1. Use `ansible-playbook` to [check](infrastructure/port-requirements/README-port-requirements-platform.md) the ports of platform.
 1. Use `ansible-playbook` to [install](installations/README-install-platform.md) the platform.
 1. Use `ansible-playbook` to [install](installations/README-install-monit.md) monit.
-1. Use `ansible-playbook` to [create an organization](post-installations/README-create-org.md) on the platform.
+1. Use `ansible-playbook` to [create new organization](post-installations/README-create-org.md) on the platform.
+1. Use `ansible-playbook` to [create new environment](post-installations/README-create-env.md) on the platform.
 
