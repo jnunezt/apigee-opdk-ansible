@@ -5,9 +5,14 @@
   gather_facts: no
   tags: ['org']
   vars:
+    org_name: '{org}'
+    env_name: '{env}'
+    virtual_host_name: '{name}'
+    virtual_host_alias: '{dns}'
+    virtual_host_port: '{port}'
     property_folders:
       - "~/.apigee-secure"
       - "~/.apigee"
   roles:
     - apigee-opdk-modules
-    - { role: apigee-opdk-setup-org, org_name: '{org}', env_name: '{env}', virtual_host_alias: '{dns}', virtual_host_port: '{port}', virtual_host_name: '{name}' }
+    - apigee-opdk-setup-org
