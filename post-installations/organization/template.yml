@@ -1,4 +1,13 @@
 ---
+- name: Collect server info into cache
+  hosts: ms
+  gather_facts: no
+  roles:
+  - apigee-opdk-modules
+  - apigee-opdk-settings-region
+  - apigee-opdk-settings-private-address
+  - apigee-opdk-settings-management-server
+
 - name: Configure Organization and Environments
   hosts: ms[0]
   serial: 1
