@@ -1,12 +1,17 @@
 ---
-- name: Collect server info into cache
-  hosts: ms
-  gather_facts: no
+- name: Collect Configuration Information for Planet
+  hosts: edge
+  strategy: free
+  tags: ['cache']
+  vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
   roles:
-  - apigee-opdk-modules
-  - apigee-opdk-settings-region
-  - apigee-opdk-settings-private-address
-  - apigee-opdk-settings-management-server
+    - { role: apigee-opdk-modules, tags: ['minimum', 'cache', 'ds', 'ms', 'rmp', 'r', 'mp', 'qpid', 'pg', 'pgmaster', 'pgstandby', 'org', 'validate', 'validate-cleanup','common','expansion'] }
+    - { role: apigee-opdk-settings-private-address, tags: ['minimum', 'cache', 'ds', 'ms', 'rmp', 'r', 'mp', 'qpid', 'pg', 'pgmaster', 'pgstandby', 'org', 'validate', 'validate-cleanup']  }
+    - { role: apigee-opdk-settings-management-server, tags: ['minimum', 'cache', 'ds', 'ms', 'rmp', 'r', 'mp', 'qpid', 'pg', 'pgmaster', 'pgstandby', 'org', 'validate', 'validate-cleanup']  }
+    - { role: apigee-opdk-settings-region, tags: ['minimum', 'cache', 'ds', 'ms', 'rmp', 'r', 'mp', 'qpid', 'pg', 'pgmaster', 'pgstandby', 'org', 'validate', 'validate-cleanup']  }
 
 - name: Configure Organization and Environments
   hosts: ms[0]
@@ -14,14 +19,9 @@
   gather_facts: no
   tags: ['org']
   vars:
-    org_name: '{org}'
-    env_name: '{env}'
-    virtual_host_name: '{name}'
-    virtual_host_alias: '{dns}'
-    virtual_host_port: '{port}'
     property_folders:
       - "~/.apigee-secure"
       - "~/.apigee"
   roles:
     - apigee-opdk-modules
-    - apigee-opdk-setup-org
+    - { role: apigee-opdk-setup-org, org_name: '{org}', env_name: '{env}', virtual_host_alias: '{dns}', virtual_host_port: '{port}', virtual_host_name: '{name}' }
