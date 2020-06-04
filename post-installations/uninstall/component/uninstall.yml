@@ -4,61 +4,53 @@
   tags: ['router','r']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
+    - apigee-opdk-setup-component-uninstall
       
 - name: Message Processor
   hosts: mp,rmp
   tags: ['mp']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart   
+    - apigee-opdk-setup-component-uninstall
 
 - name: Qpid
   hosts: qpid
   tags: ['qpid']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
+    - apigee-opdk-setup-component-uninstall
       
 - name: Postgres
   hosts: pg
   tags: ['pg']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
+    - apigee-opdk-setup-component-uninstall
 
 - name: Edge-UI
   hosts: ui
   tags: ['ui']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
+    - apigee-opdk-setup-component-uninstall
 
 - name: Ldap
   hosts: ldap
   tags: ['ldap']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
+    - apigee-opdk-setup-component-uninstall
 
 - name: Management Server
   hosts: ms
   tags: ['ms']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
+    - apigee-opdk-setup-component-uninstall
 
 - name: Cassandra & Zookeeper
   hosts: ds
   tags: ['ds','zk']
   strategy: free
   roles:
-    - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
+    - apigee-opdk-setup-component-uninstall
