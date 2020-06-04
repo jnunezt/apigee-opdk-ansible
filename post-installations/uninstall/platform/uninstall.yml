@@ -1,0 +1,8 @@
+---
+- name: Uninstall Platform
+  hosts: edge
+  tags: ['all']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-component-uninstall
+    - apigee-server-restart
