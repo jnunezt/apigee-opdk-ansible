@@ -1,56 +1,77 @@
 ---
-- name: Router
-  hosts: router,rmp
-  tags: ['router','r']
+- name: Cassandra
+  hosts: ds
+  tags: ['ds']
   strategy: free
   roles:
-    - apigee-opdk-setup-component-uninstall
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'apigee-cassandra' }
+
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  roles:
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'apigee-zookeeper' }
       
-- name: Message Processor
-  hosts: mp,rmp
-  tags: ['mp']
-  strategy: free
-  roles:
-    - apigee-opdk-setup-component-uninstall
-
-- name: Qpid
-  hosts: qpid
-  tags: ['qpid']
-  strategy: free
-  roles:
-    - apigee-opdk-setup-component-uninstall
-      
-- name: Postgres
-  hosts: pg
-  tags: ['pg']
-  strategy: free
-  roles:
-    - apigee-opdk-setup-component-uninstall
-
-- name: Edge-UI
-  hosts: ui
-  tags: ['ui']
-  strategy: free
-  roles:
-    - apigee-opdk-setup-component-uninstall
-
 - name: Ldap
   hosts: ldap
   tags: ['ldap']
   strategy: free
   roles:
-    - apigee-opdk-setup-component-uninstall
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'apigee-openldap' }
 
 - name: Management Server
   hosts: ms
   tags: ['ms']
   strategy: free
   roles:
-    - apigee-opdk-setup-component-uninstall
-
-- name: Cassandra & Zookeeper
-  hosts: ds
-  tags: ['ds','zk']
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'edge-management-server' }
+      
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
   strategy: free
   roles:
-    - apigee-opdk-setup-component-uninstall
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'edge-ui' }
+      
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  roles:
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'edge-router' }
+      
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  roles:
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'edge-message-processor' }
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  roles:
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'apigee-qpidd' }
+    
+- name: Qpid Server
+  hosts: qpid
+  tags: ['qpid-server']
+  strategy: free
+  roles:
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'edge-qpid-server' }
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  roles:
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'apigee-postgresql' }
+    
+- name: Postgres Server
+  hosts: pg
+  tags: ['pg-server']
+  strategy: free
+  roles:
+    - { role: apigee-opdk-setup-component-uninstall, apigee_service: 'edge-postgres-server' }
