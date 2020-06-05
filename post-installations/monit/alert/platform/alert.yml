@@ -1,0 +1,10 @@
+---
+- name: Alert Apigee component Monit for Platform
+  hosts: edge
+  tags: ['all']
+  strategy: free
+  vars:
+    opdk_alert_mail_from: ''
+    opdk_alert_mail_send_1: ''
+  roles:
+    - apigee-opdk-setup-monit-alert
