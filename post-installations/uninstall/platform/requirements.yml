@@ -1,5 +1,3 @@
 ---
 # Ansible Roles for Restore apigee
 - src: https://github.com/chronos085/apigee-opdk-setup-node-uninstall.git
-
-- src: https://github.com/chronos085/apigee-server-restart.git

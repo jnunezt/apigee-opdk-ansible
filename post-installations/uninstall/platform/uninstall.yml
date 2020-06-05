@@ -5,4 +5,3 @@
   strategy: free
   roles:
     - apigee-opdk-setup-node-uninstall
-    - apigee-server-restart
