@@ -1,0 +1,81 @@
+---
+- name: Cassandra
+  hosts: ds
+  tags: ['ds']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+      
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+      
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:

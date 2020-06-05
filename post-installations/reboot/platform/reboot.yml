@@ -1,0 +1,9 @@
+---
+- name: Platform
+  hosts: edge
+  tags: ['all']
+  strategy: free
+  tasks:
+    - name: Unconditionally reboot the machine with all defaults
+      become: yes
+      reboot:
