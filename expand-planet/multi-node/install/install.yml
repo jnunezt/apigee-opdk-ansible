@@ -13,7 +13,7 @@
     - { role: apigee-opdk-setup-component, profile: 'c' }
     
 - name: Configure Cassandra
-  hosts: ds_expand
+  hosts: expand_c
   gather_facts: no
   serial: 1
   tags: ['ds']
