@@ -1,0 +1,55 @@
+---
+- name: Install Cassandra
+  hosts: ds
+  gather_facts: no
+  serial: 1
+  tags: ['ds']
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+  roles:
+    - apigee-opdk-modules
+    - { role: apigee-opdk-setup-component, profile: 'c' }
+    
+- name: Configure Cassandra
+  hosts: ds_expand
+  gather_facts: no
+  serial: 1
+  tags: ['ds']
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+  roles:
+    - { role: apigee-opdk-cassandra-rebuild }
+
+- name: Configure Management Server
+  hosts: ms
+  gather_facts: no
+  serial: 1
+  tags: ['ms']
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+  roles:
+    - apigee-opdk-modules
+    - { role: apigee-opdk-setup-component, profile: 'ms', when: region_num | int < 3 }
+    - { role: apigee-opdk-setup-component, profile: 'ms', when: region_num | int> 2, port_timeout: 300 }
+    
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Restart Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router restart'
+
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: Start Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor restart'
