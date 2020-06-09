@@ -5,7 +5,7 @@
   strategy: free
   tasks:
     - name: Status Cassandra
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra status'
+      command: 'removes=/opt/apigee/apigee-cassandra /opt/apigee/apigee-service/bin/apigee-service apigee-cassandra status'
       
 - name: Zookeeper
   hosts: ds
@@ -13,7 +13,7 @@
   strategy: free
   tasks:
     - name: Status Zookeeper
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper status'
+      command: 'removes=/opt/apigee/apigee-zookeeper /opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper status'
 
 - name: Ldap
   hosts: ldap
