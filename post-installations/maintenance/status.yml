@@ -21,7 +21,7 @@
   strategy: free
   tasks:
     - name: Status Ldap
-      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap status'
+      command: 'removes=/opt/apigee/apigee-openldap /opt/apigee/apigee-service/bin/apigee-service apigee-openldap status'
       
 - name: Management Server
   hosts: ms
