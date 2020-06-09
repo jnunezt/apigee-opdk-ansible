@@ -1,17 +1,17 @@
 ---
-- name: Install Cassandra
-  hosts: ds
-  gather_facts: no
-  serial: 1
-  tags: ['ds']
-  vars:
-    property_folders:
-      - "~/.apigee-secure"
-      - "~/.apigee"
-  roles:
-    - apigee-opdk-modules
-    - { role: apigee-opdk-setup-component, profile: 'c' }
-    
+#- name: Install Cassandra
+#  hosts: ds
+#  gather_facts: no
+#  serial: 1
+#  tags: ['ds']
+#  vars:
+#    property_folders:
+#      - "~/.apigee-secure"
+#      - "~/.apigee"
+#  roles:
+#    - apigee-opdk-modules
+#    - { role: apigee-opdk-setup-component, profile: 'c' }
+#    
 - name: Configure Cassandra
   hosts: expand_c
   gather_facts: no
@@ -22,6 +22,7 @@
       - "~/.apigee-secure"
       - "~/.apigee"
   roles:
+    - apigee-opdk-modules
     - { role: apigee-opdk-cassandra-rebuild }
 
 - name: Configure Management Server
