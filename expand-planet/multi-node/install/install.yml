@@ -23,7 +23,7 @@
       - "~/.apigee"
   roles:
     - apigee-opdk-modules
-    - { role: apigee-opdk-cassandra-rebuild }
+    - { role: apigee-opdk-cassandra-rebuild, profile: 'ds' }
 
 - name: Configure Management Server
   hosts: ms
