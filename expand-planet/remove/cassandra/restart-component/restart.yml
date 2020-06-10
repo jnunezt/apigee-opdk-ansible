@@ -1,0 +1,48 @@
+---
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Restart Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router restart'
+    - name: Wait for Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router wait_for_ready'
+
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: Restart Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor restart'
+    - name: Wait for Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor wait_for_ready'
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: Restart Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd restart'
+    - name: Wait for Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd wait_for_ready'
+    - name: Start Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server restart'
+    - name: Wait for Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server wait_for_ready'
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: Restart Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql restart'
+    - name: Wait for Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql wait_for_ready'
+    - name: Start Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server restart'
+    - name: Wait for Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server wait_for_ready'
