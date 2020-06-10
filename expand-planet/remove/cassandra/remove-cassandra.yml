@@ -2,18 +2,15 @@
 - name: Playbook to remove a cassandra
   hosts: expand_c
   gather_facts: no
-
   vars:
     nodetool: /opt/apigee/apigee-cassandra/bin/nodetool
     property_folders:
-    - '~/.apigee'
-    - '~/.apigee-secure'
+      - '~/.apigee'
+      - '~/.apigee-secure'
     component_name: "apigee-cassandra"
-
   roles:
     - apigee-opdk-cassandra-repair
     - apigee-opdk-cassandra-rebuild
-
   tasks:
   - name: Backup component
     tags: ['backup']
