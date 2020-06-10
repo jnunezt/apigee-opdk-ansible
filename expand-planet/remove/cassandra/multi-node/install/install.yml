@@ -1,0 +1,14 @@
+---
+- name: Configure & Install Management Server
+  hosts: ms
+  gather_facts: no
+  serial: 1
+  tags: ['ms']
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+  roles:
+    - apigee-opdk-modules
+    - { role: apigee-opdk-setup-component, profile: 'ms', when: region_num | int < 3 }
+    - { role: apigee-opdk-setup-component, profile: 'ms', when: region_num | int> 2, port_timeout: 300 }
