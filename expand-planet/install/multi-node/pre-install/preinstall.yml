@@ -81,7 +81,7 @@
     - apigee-opdk-setup-apigee-user
     - apigee-opdk-settings-cassandra
     - apigee-opdk-settings-postgres
-    - apigee-opdk-setup-silent-installation-config-single
+    - apigee-opdk-setup-silent-installation-config-single-expand
 
 - name: Distribute Configuration File to Planet
   hosts: edge
