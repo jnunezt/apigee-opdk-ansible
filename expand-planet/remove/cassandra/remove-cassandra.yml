@@ -8,14 +8,14 @@
       - '~/.apigee'
       - '~/.apigee-secure'
     component_name: "apigee-cassandra"
-  roles:
-    - apigee-opdk-cassandra-repair
-    - apigee-opdk-cassandra-rebuild
+  #roles:
+   # - apigee-opdk-cassandra-repair
+   # - apigee-opdk-cassandra-rebuild
   tasks:
-  - name: Backup component
-    tags: ['backup']
-    import_role:
-      name: apigee-opdk-backup
+  #- name: Backup component
+  #  tags: ['backup']
+  #  import_role:
+  #    name: apigee-opdk-backup
 
   - name: Assert variables exist
     assert:
