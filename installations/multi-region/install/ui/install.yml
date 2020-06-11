@@ -1,0 +1,13 @@
+---
+- name: Configure & Install Edge UI
+  hosts: ui
+  gather_facts: no
+  serial: 1
+  tags: ['ui']
+  vars:
+    property_folders:
+      - "~/.apigee-secure"
+      - "~/.apigee"
+  roles:
+    - apigee-opdk-modules
+    - { role: apigee-opdk-setup-component, profile: 'ui', tags: ['ui'] }
