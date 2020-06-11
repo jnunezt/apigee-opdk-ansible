@@ -4,11 +4,14 @@
   gather_facts: no
   vars:
     nodetool: /opt/apigee/apigee-cassandra/bin/nodetool
+    apigee_service: /opt/apigee/apigee-service/bin/apigee-service
     property_folders:
       - '~/.apigee'
       - '~/.apigee-secure'
     component_name: "apigee-cassandra"
-  #roles:
+  roles:
+    - apigee-opdk-modules
+    - apigee-opdk-settings-private-address
    # - apigee-opdk-cassandra-repair
    # - apigee-opdk-cassandra-rebuild
   tasks:
