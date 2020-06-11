@@ -1,0 +1,7 @@
+---
+- name: Uninstall Node
+  hosts: rmp
+  tags: ['rmp']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-node-uninstall
