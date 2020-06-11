@@ -1,0 +1,7 @@
+---
+- name: Uninstall Node
+  hosts: expand_c
+  tags: ['ds']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-node-uninstall
