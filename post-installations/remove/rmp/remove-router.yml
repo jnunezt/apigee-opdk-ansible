@@ -18,6 +18,7 @@
   gather_facts: no
 
   vars:
+    apigee_home: /opt/apigee
     property_folders:
     - '~/.apigee'
     - '~/.apigee-secure'
