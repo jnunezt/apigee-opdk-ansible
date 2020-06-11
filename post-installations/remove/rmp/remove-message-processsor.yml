@@ -1,4 +1,18 @@
 ---
+- name: Collect Configuration Information for Planet
+  hosts: edge
+  strategy: free
+  tags: ['cache']
+  vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
+  roles:
+  - apigee-opdk-modules
+  - apigee-opdk-settings-private-address
+  - apigee-opdk-settings-management-server
+  - apigee-opdk-settings-region
+
 - name: Playbook to remove a message processor
   hosts: rmp
   gather_facts: no
