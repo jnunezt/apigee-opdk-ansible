@@ -1,0 +1,20 @@
+---
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: Remove the Nginx directory
+      become: yes
+      file:
+        path: /logs-pool/nginx
+        state: absent
+    - name: Create a symbolic link
+      become: yes
+      file:
+        src: /opt/apigee/var/log/edge-router/nginx/
+        dest: /logs-pool/nginx
+        owner: '{{ opdk_user_name }}'
+        group: '{{ opdk_group_name }}'
+        state: link
+      
