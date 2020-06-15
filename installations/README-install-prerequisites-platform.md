@@ -22,7 +22,7 @@ used by this playbook. You can use `ansible-galaxy` in the following way:
 	
 Once the roles are installed you can invoke the pre install process as follows:
 
-    ansible-playbook install.yml
+    ansible-playbook preinstall.yml
 
 ### Executing Portions of the Installation
 It is necessary to many times only execute a portion of the overall installation script. This has been enabled by the 
