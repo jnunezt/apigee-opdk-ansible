@@ -31,12 +31,12 @@ Ansible tags are used extensively to execute functionally significant portions o
 used consistently across all the installation playbooks. In some cases, the tags perform slightly different tasks but 
 achieve the semantic functionality ascribed by the name. A sample tag usage that invokes the `os` tag is as follows: 
 
-    ansible-playbook install.yml --tags=os
+    ansible-playbook preinstall.yml --tags=os
     
 ### Tags Listing
 You can discover the names of tags using the Ansible flag --list-tags as follows: 
 
-    ansible-playbook install.yml --list-tags
+    ansible-playbook preinstall.yml --list-tags
     
 The following table lists the main tag names and a description of the functionality that can be invoked. Additional, tags
 are available and sometimes added organically. It is expected that you will read the roles to understand how tags that are
