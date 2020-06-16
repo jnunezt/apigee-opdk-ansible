@@ -1,6 +1,6 @@
 ---
 - name: Complete OS Pre-requisites
-  hosts: edge
+  hosts: dc_1
   tags: ['os']
   vars:
     property_folders:
@@ -22,7 +22,7 @@
     - { role: apigee-opdk-setup-openjdk, tags: ['minimum', 'openjdk','bootstrap'], jdk_version: '1.8' }
 
 - name: Install Edge
-  hosts: edge
+  hosts: dc_1
   tags: ['edge', 'edge-common']
   vars:
     property_folders:
