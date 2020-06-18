@@ -5,6 +5,7 @@
   strategy: free
   vars:
     opdk_file_jmx: "edge-router_jmx.yaml"
+    opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
     - apigee-opdk-setup-jmx-prometheus
   tasks:
@@ -25,6 +26,7 @@
   strategy: free
   vars:
     opdk_file_jmx: "edge-message-processor_jmx.yaml"
+    opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
     - apigee-opdk-setup-jmx-prometheus
   tasks:
@@ -45,6 +47,7 @@
   strategy: free
   vars:
     opdk_file_jmx: "edge-qpid-server_jmx.yaml"
+    opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
     - apigee-opdk-setup-jmx-prometheus
   tasks:
@@ -65,6 +68,7 @@
   strategy: free
   vars:
     opdk_file_jmx: "edge-postgres-server_jmx.yaml"
+    opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
     - apigee-opdk-setup-jmx-prometheus
   tasks:
@@ -85,6 +89,7 @@
   strategy: free
   vars:
     opdk_file_jmx: "edge-management-server_jmx.yaml"
+    opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
     - apigee-opdk-setup-jmx-prometheus
   tasks:
