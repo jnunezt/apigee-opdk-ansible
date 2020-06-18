@@ -1,0 +1,43 @@
+---
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  vars:
+    opdk_file_jmx: "edge-router_jmx.yaml"
+  roles:
+    - apigee-opdk-setup-jmx-prometheus
+    
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  vars:
+    opdk_file_jmx: "edge-message-processor_jmx.yaml"
+
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  vars:
+    opdk_file_jmx: "edge-qpid-server_jmx.yaml"
+  roles:
+    - apigee-opdk-setup-jmx-prometheus
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  vars:
+    opdk_file_jmx: "edge-postgres-server_jmx.yaml"
+  roles:
+    - apigee-opdk-setup-jmx-prometheus
+
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  vars:
+    opdk_file_jmx: "edge-management-server_jmx.yaml"
+  roles:
+    - apigee-opdk-setup-jmx-prometheus
