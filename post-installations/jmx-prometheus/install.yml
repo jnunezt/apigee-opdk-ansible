@@ -143,7 +143,7 @@
       become: yes
       lineinfile:
         path: /opt/apigee/edge-management-server/bin/start
-        regexp: '^exec $JAVA -classpath "$classpath" -Xms$min_mem -Xmx$max_mem $xx_opts -Djava.security.auth.login.config=$conf_path/jaas.config -Dinstallation.dir=$install_dir $sys_props -Dconf.dir=$conf_path -Ddata.dir=$data_dir $ext_jvm_opts $* $debug_options com.apigee.kernel.MicroKernel'
+        regexp: '^exec $JAVA%'
         state: absent
     - name: set jmx agent prometheus
       become: yes
