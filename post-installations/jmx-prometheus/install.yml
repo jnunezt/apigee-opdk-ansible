@@ -29,9 +29,13 @@
   tags: ['mp']
   strategy: free
   vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
     opdk_file_jmx: "edge-message-processor_jmx.yaml"
     opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
+    - apigee-opdk-modules
     - apigee-opdk-setup-jmx-prometheus
   tasks:
     - name: Stop Message Processor
@@ -50,9 +54,13 @@
   tags: ['qpid']
   strategy: free
   vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
     opdk_file_jmx: "edge-qpid-server_jmx.yaml"
     opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
+    - apigee-opdk-modules
     - apigee-opdk-setup-jmx-prometheus
   tasks:
     - name: Stop Qpid Server
@@ -71,9 +79,13 @@
   tags: ['pg']
   strategy: free
   vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
     opdk_file_jmx: "edge-postgres-server_jmx.yaml"
     opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
+    - apigee-opdk-modules
     - apigee-opdk-setup-jmx-prometheus
   tasks:
     - name: Stop Postgres Server
@@ -92,9 +104,13 @@
   tags: ['ms']
   strategy: free
   vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
     opdk_file_jmx: "edge-management-server_jmx.yaml"
     opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
+    - apigee-opdk-modules
     - apigee-opdk-setup-jmx-prometheus
   tasks:
     - name: Stop Management Server
