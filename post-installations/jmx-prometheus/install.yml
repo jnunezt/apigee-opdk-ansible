@@ -4,6 +4,9 @@
   tags: ['router','r']
   strategy: free
   vars:
+    property_folders:
+    - "~/.apigee-secure"
+    - "~/.apigee"
     opdk_file_jmx: "edge-router_jmx.yaml"
     opdk_src_agent_prometheus: '/opt/agent/jmx_prometheus_javaagent-0.3.1.jar'
   roles:
