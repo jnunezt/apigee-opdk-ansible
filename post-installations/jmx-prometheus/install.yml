@@ -139,17 +139,18 @@
   tasks:
     - name: Stop Management Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server stop'
-    - name: delete java
-      become: yes
-      lineinfile:
-        path: /opt/apigee/edge-management-server/bin/start
-        regexp: '^exec $JAVA*'
-        state: absent
+#    - name: delete java
+#      become: yes
+#      lineinfile:
+#        path: /opt/apigee/edge-management-server/bin/start
+#        regexp: '^exec $JAVA'
+#        state: absent
     - name: set jmx agent prometheus
       become: yes
       lineinfile:
         path: /opt/apigee/edge-management-server/bin/start
+        regexp: '^exec $JAVA'
         line: 'exec $JAVA -classpath "$classpath" -Xms$min_mem -Xmx$max_mem $xx_opts -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=1099:/opt/agent/edge-management-server_jmx.yaml -Djava.security.auth.login.config=$conf_path/jaas.config -Dinstallation.dir=$install_dir $sys_props -Dconf.dir=$conf_path -Ddata.dir=$data_dir $ext_jvm_opts $* $debug_options com.apigee.kernel.MicroKernel'
-        create: yes
+        backrefs: yes
     - name: Start Management Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server start'
