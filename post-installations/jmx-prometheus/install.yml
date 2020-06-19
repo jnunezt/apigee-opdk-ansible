@@ -15,12 +15,18 @@
   tasks:
     - name: Stop Router
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-router stop'
-    - name: set jmx agent prometheus
+    - name: delete java
       become: yes
       lineinfile:
         path: /opt/apigee/edge-router/bin/start
         regexp: '^exec $JAVA'
+        state: absent
+    - name: set jmx agent prometheus
+      become: yes
+      lineinfile:
+        path: /opt/apigee/edge-router/bin/start
         line: 'exec $JAVA -classpath "$classpath" -Xms$min_mem -Xmx$max_mem $xx_opts -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=1100:/opt/agent/edge-router_jmx.yaml -Djava.security.auth.login.config=$conf_path/jaas.config -Dinstallation.dir=$install_dir $sys_props -Dconf.dir=$conf_path -Ddata.dir=$data_dir $ext_jvm_opts $* $debug_options com.apigee.kernel.MicroKernel'
+        create: yes
     - name: Start Router
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-router start'
 
@@ -40,12 +46,18 @@
   tasks:
     - name: Stop Message Processor
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor stop'
-    - name: set jmx agent prometheus
+    - name: delete java
       become: yes
       lineinfile:
         path: /opt/apigee/edge-message-processor/bin/start
         regexp: '^exec $JAVA'
+        state: absent
+    - name: set jmx agent prometheus
+      become: yes
+      lineinfile:
+        path: /opt/apigee/edge-message-processor/bin/start
         line: 'exec $JAVA -classpath "$classpath" -Xms$min_mem -Xmx$max_mem $xx_opts -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=1101:/opt/agent/edge-message-processor_jmx.yaml -Djava.security.auth.login.config=$conf_path/jaas.config -Dinstallation.dir=$install_dir $sys_props -Dconf.dir=$conf_path -Ddata.dir=$data_dir $ext_jvm_opts $* $debug_options com.apigee.kernel.MicroKernel'
+        create: yes
     - name: Start Message Processor
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor start'
 
@@ -65,12 +77,18 @@
   tasks:
     - name: Stop Qpid Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server stop'
-    - name: set jmx agent prometheus
+    - name: delete java
       become: yes
       lineinfile:
         path: /opt/apigee/edge-qpid-server/bin/start
         regexp: '^exec $JAVA'
+        state: absent
+    - name: set jmx agent prometheus
+      become: yes
+      lineinfile:
+        path: /opt/apigee/edge-qpid-server/bin/start
         line: 'exec $JAVA -classpath "$classpath" -Xms$min_mem -Xmx$max_mem $xx_opts -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=1102:/opt/agent/edge-qpid-server_jmx.yaml -Djava.security.auth.login.config=$conf_path/jaas.config -Dinstallation.dir=$install_dir $sys_props -Dconf.dir=$conf_path -Ddata.dir=$data_dir $ext_jvm_opts $* $debug_options com.apigee.kernel.MicroKernel'
+        create: yes
     - name: Start Qpid Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server start'
       
@@ -90,12 +108,18 @@
   tasks:
     - name: Stop Postgres Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server stop'
-    - name: set jmx agent prometheus
+    - name: delete java
       become: yes
       lineinfile:
         path: /opt/apigee/edge-postgres-server/bin/start
         regexp: '^exec $JAVA'
+        state: absent
+    - name: set jmx agent prometheus
+      become: yes
+      lineinfile:
+        path: /opt/apigee/edge-postgres-server/bin/start
         line: 'exec $JAVA -classpath "$classpath" -Xms$min_mem -Xmx$max_mem $xx_opts -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=1103:/opt/agent/edge-postgres-server_jmx.yaml -Djava.security.auth.login.config=$conf_path/jaas.config -Dinstallation.dir=$install_dir $sys_props -Dconf.dir=$conf_path -Ddata.dir=$data_dir $ext_jvm_opts $* $debug_options com.apigee.kernel.MicroKernel'
+        create: yes
     - name: Start Postgres Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server start'
 
@@ -115,11 +139,17 @@
   tasks:
     - name: Stop Management Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server stop'
-    - name: set jmx agent prometheus
+    - name: delete java
       become: yes
       lineinfile:
         path: /opt/apigee/edge-management-server/bin/start
         regexp: '^exec $JAVA'
+        state: absent
+    - name: set jmx agent prometheus
+      become: yes
+      lineinfile:
+        path: /opt/apigee/edge-management-server/bin/start
         line: 'exec $JAVA -classpath "$classpath" -Xms$min_mem -Xmx$max_mem $xx_opts -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=1099:/opt/agent/edge-management-server_jmx.yaml -Djava.security.auth.login.config=$conf_path/jaas.config -Dinstallation.dir=$install_dir $sys_props -Dconf.dir=$conf_path -Ddata.dir=$data_dir $ext_jvm_opts $* $debug_options com.apigee.kernel.MicroKernel'
+        create: yes
     - name: Start Management Server
       command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server start'
