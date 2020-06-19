@@ -19,7 +19,7 @@
       become: yes
       lineinfile:
         path: /opt/apigee/edge-router/bin/start
-        regexp: '^exec $JAVA'
+        regexp: '^%exec $JAVA'
         state: absent
     - name: set jmx agent prometheus
       become: yes
@@ -50,7 +50,7 @@
       become: yes
       lineinfile:
         path: /opt/apigee/edge-message-processor/bin/start
-        regexp: '^exec $JAVA'
+        regexp: '^%exec $JAVA'
         state: absent
     - name: set jmx agent prometheus
       become: yes
@@ -81,7 +81,7 @@
       become: yes
       lineinfile:
         path: /opt/apigee/edge-qpid-server/bin/start
-        regexp: '^exec $JAVA'
+        regexp: '^%exec $JAVA'
         state: absent
     - name: set jmx agent prometheus
       become: yes
@@ -112,7 +112,7 @@
       become: yes
       lineinfile:
         path: /opt/apigee/edge-postgres-server/bin/start
-        regexp: '^exec $JAVA'
+        regexp: '^%exec $JAVA'
         state: absent
     - name: set jmx agent prometheus
       become: yes
@@ -143,7 +143,7 @@
       become: yes
       lineinfile:
         path: /opt/apigee/edge-management-server/bin/start
-        regexp: '^exec $JAVA'
+        regexp: '^%exec $JAVA'
         state: absent
     - name: set jmx agent prometheus
       become: yes
