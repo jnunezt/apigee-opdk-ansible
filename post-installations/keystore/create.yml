@@ -5,8 +5,11 @@
   vars:
     org: opdk
     env: test
-    keystore_name: test-ks
+    keystore_name: ks-name
     keystore_alias: alias
+    reference_name: ref-name
+    file_key: server.key
+    file_crt: server.crt
     property_folders:
     - "~/.apigee-secure"
   roles:
@@ -14,35 +17,55 @@
   - { role: apigee-opdk-settings-region }
   - { role: apigee-opdk-settings-private-address }
   - { role: apigee-opdk-settings-management-server }
+  
+  tasks:
+  - name: POST Create KeyStore
+    shell: 'curl -X POST "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/keystores" \
+                --header "Content-Type: application/json" \
+                -u {{ opdk_user_email }}:{{ opdk_user_pass }} \
+                -d "{\"name\" : \"{{ keystore_name }}\"}"'
+  
+#  - name: Create KeyStore
+#    uri:
+#      url: "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/keystores"
+#      user: "{{ opdk_user_email }}"
+#      password: "{{ opdk_user_pass }}"
+#      method: POST
+#      body: "{{ lookup('file','keystore.json') }}"
+#      force_basic_auth: yes
+#      status_code: 201
+#      body_format: json
 
-  - name: Create KeyStore
-    uri:
-      url: "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/keystores"
-      user: "{{ opdk_user_email }}"
-      password: "{{ opdk_user_pass }}"
-      method: POST
-      body: "{{ lookup('file','keystore.json') }}"
-      force_basic_auth: yes
-      status_code: 201
-      body_format: json
-  - name: Upload KeyStore
-    uri:
-      url: "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/keystores/{{ keystore_name }}/aliases?alias={{ keystore_alias }}&format=keycertfile"
-      user: "{{ opdk_user_email }}"
-      password: "{{ opdk_user_pass }}"
-      method: POST
-      src: "{{ lookup('keyFile','/tmp/ssl/server.key') }}"
-      src: "{{ lookup('certFile','/tmp/ssl/server.crt') }}"
-      force_basic_auth: yes
-      status_code: 201
-      body_format: json
-  - name: Create Reference
-    uri:
-      url: "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/references"
-      user: "{{ opdk_user_email }}"
-      password: "{{ opdk_user_pass }}"
-      method: POST
-      body: "{{ lookup('file','reference.json') }}"
-      force_basic_auth: yes
-      status_code: 201
-      body_format: json
+  - name: POST Create KeyStore
+    shell: 'curl -X POST "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/keystores/{{ keystore_name }}/aliases?alias={{ keystore_alias }}&format=keycertfile" \
+                -u {{ opdk_user_email }}:{{ opdk_user_pass }} \
+                -F "keyFile=@{{ file_key }}" -F "certFile=@{{ file_crt }}"'
+                
+#  - name: Upload KeyStore
+#    uri:
+#      url: "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/keystores/{{ keystore_name }}/aliases?alias={{ keystore_alias }}&format=keycertfile"
+#      user: "{{ opdk_user_email }}"
+#      password: "{{ opdk_user_pass }}"
+#      method: POST
+#      src: "{{ lookup('keyFile','/tmp/ssl/server.key') }}"
+#      src: "{{ lookup('certFile','/tmp/ssl/server.crt') }}"
+#      force_basic_auth: yes
+#      status_code: 201
+#      body_format: json
+
+  - name: POST Create KeyStore
+    shell: 'curl -X POST "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/references" \
+                --header "Content-Type: application/json" \
+                -u {{ opdk_user_email }}:{{ opdk_user_pass }} \
+                -d "{\"name\":\"fif-ref\",\"refers\":\"{{ keystore_name }}\",\"resourceType\":\"KeyStore\"}"'
+                
+#  - name: Create Reference
+#    uri:
+#      url: "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/references"
+#      user: "{{ opdk_user_email }}"
+#      password: "{{ opdk_user_pass }}"
+#      method: POST
+#      body: "{{ lookup('file','reference.json') }}"
+#      force_basic_auth: yes
+#      status_code: 201
+#      body_format: json
