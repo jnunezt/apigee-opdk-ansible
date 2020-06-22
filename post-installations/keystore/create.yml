@@ -24,7 +24,6 @@
                 --header "Content-Type: application/json" \
                 -u {{ opdk_user_email }}:{{ opdk_user_pass }} \
                 -d "{\"name\" : \"{{ keystore_name }}\"}"'
-    delegate_to: 127.0.0.1
 
   - name: POST Create KeyStore
     shell: 'curl -X POST "http://{{ local_mgmt_ip }}:{{ ms_port }}/v1/o/{{ org }}/e/{{ env }}/keystores/{{ keystore_name }}/aliases?alias={{ keystore_alias }}&format=keycertfile" \
@@ -37,4 +36,3 @@
                 --header "Content-Type: application/json" \
                 -u {{ opdk_user_email }}:{{ opdk_user_pass }} \
                 -d "{\"name\":\"fif-ref\",\"refers\":\"{{ keystore_name }}\",\"resourceType\":\"KeyStore\"}"'
-    delegate_to: 127.0.0.1
