@@ -1,0 +1,14 @@
+{
+  "hostAliases": [
+    "xx.xx.xx.xx:443",
+    "xx.xx.xx.xx:443"
+  ],
+  "name": "secure",
+  "port": "443",
+  "sSLInfo": {
+    "enabled": "true",
+	"clientAuthEnabled": "false",
+	"keyStore": "ref://myTestKeystoreRef",
+	"keyAlias": "myKeyAlias",
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "hostAliases": [
+    "xx.xx.xx.xx:9001",
+    "xx.xx.xx.xx:9001"
+  ],
+  "name": "default",
+  "port": "9001"
+}
