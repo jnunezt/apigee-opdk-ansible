@@ -1,10 +1,10 @@
 ---
-- src: https://github.com/carlosfrias/apigee-opdk-modules.git
+- src: https://github.com/chronos085/apigee-opdk-modules.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-settings-region.git
+- src: https://github.com/chronos085/apigee-opdk-settings-region.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-settings-management-server.git
+- src: https://github.com/chronos085/apigee-opdk-settings-management-server.git
 
-- src: https://github.com/carlosfrias/apigee-opdk-settings-private-address.git
+- src: https://github.com/chronos085/apigee-opdk-settings-private-address.git
 
 
