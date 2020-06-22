@@ -1,5 +1,0 @@
-{
-  "name":"{name_ref}",
-  "refers":"{name_keystore}",
-  "resourceType":"KeyStore"
-}
