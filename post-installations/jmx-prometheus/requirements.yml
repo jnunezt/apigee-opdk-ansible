@@ -1,3 +1,5 @@
 ---
 # Ansible Roles for Restore apigee
 - src: https://github.com/chronos085/apigee-opdk-setup-jmx-prometheus.git
+
+- src: https://github.com/chronos085/apigee-opdk-setup-jmx-prometheus-cs.git
