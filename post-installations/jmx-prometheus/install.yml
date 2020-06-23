@@ -174,7 +174,7 @@
       become: yes
       lineinfile:
         path: /opt/apigee/apigee-cassandra/bin/cassandra.in.sh
-        line: 'JVM_OPTS="$JVM_OPTS -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=8080:/opt/agent/apigee-cassandra_jmx.yaml"'
+        line: 'JVM_OPTS="$JVM_OPTS -javaagent:/opt/agent/jmx_prometheus_javaagent-0.3.1.jar=8080:/opt/agent/apigee-cassandra_jmx.yaml'
         create: yes
     - name: Start Cassandra Server
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra start'
