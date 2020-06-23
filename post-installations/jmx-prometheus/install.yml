@@ -170,6 +170,12 @@
   tasks:
     - name: Stop Cassandra Server
       command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra stop'
+    - name: delete java
+      become: yes
+      lineinfile:
+        path: /opt/apigee/apigee-cassandra/bin/cassandra.in.sh
+        regexp: '^JVM_OPTS=.*'
+        state: absent
     - name: set jmx agent prometheus
       become: yes
       lineinfile:
