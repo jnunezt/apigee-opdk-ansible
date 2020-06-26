@@ -13,7 +13,7 @@ This can be accomplished as follows:
     cd ~/apigee-opdk-ansible
     git pull origin master
 
-## Change Directory to the setup folder
+## Change Directory To The Setup Folder
 Change directory to the setup folder:
 
     cd ~/apigee-opdk-ansible/setup
@@ -23,7 +23,7 @@ Use `ansible-galaxy` to download dependencies in the following way:
 
     ansible-galaxy install -r requirements.yml -f
 
-## Setup an Ansible Control Server on localhost
+## Setup An Ansible Control Server On Localhost
 
 `setup.yml` will configure the localhost as an Ansible control server. This tasks assume that the user has sudo privilege 
  with no password prompt. Please invoke `setup.yml` in the following way:
@@ -37,4 +37,4 @@ If this task fails due to sudo privilege, please re-invoke the script and pass t
 
 ## Next Steps
 
-Please continue with the [next steps](../README.md#usage-overview) in the process.
+Please continue with the [next steps](../../README.md#usage-overview) in the process.
