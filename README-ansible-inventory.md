@@ -239,4 +239,4 @@ that node in the following way:
 
 ## Next Steps
 
-Please continue with the [next steps](README.md#usage-overview) in the process.
+Please continue with the [next steps](README.md#quick-start-usage-overview) in the process.
