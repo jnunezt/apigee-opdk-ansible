@@ -1,6 +1,6 @@
-## Usage Instructions
+# Usage Instructions
 
-# Configure Ansible OPDK Accelerator Credentials
+## Configure Ansible OPDK Accelerator Credentials
 
 The credentials for the OPDK Accelerator are configured in the folder `~/.apigee-secure`. This folder contains the 
 credentials to be used for the Apigee Planet in the file `credentials.yml`. This folder also contains the Apigee license 

@@ -1,4 +1,4 @@
-## Usage Instructions
+# Usage Instructions
 
 1. Make a copy of the configuration file template to use as a starter. We recommend that you follow the convention of 
 using the name of the target environment as the name of the ansible configuration file. In the example code below we 

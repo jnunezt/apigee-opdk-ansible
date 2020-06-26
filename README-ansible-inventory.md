@@ -1,4 +1,4 @@
-## Usage Instructions
+# Usage Instructions
 
 Updating your Inventory File
 ============================
@@ -7,7 +7,7 @@ We use a standard Ansible inventory file with semantic conventions applied using
 [Ansible groups](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#hosts-and-groups). 
 The semantic model applied to the Ansible inventory file is described in the following sections.
 
-# Inventory Templates
+## Inventory Templates
 [Inventory templates](https://github.com/carlosfrias/apigee-opdk-ansible-inventory-samples) are provided to enable a 
 quick start. It is important to select the template that most closely matches your target topology. These templates 
 require that you provide the IP address of the nodes you are using in the group that is named after the role that the 
