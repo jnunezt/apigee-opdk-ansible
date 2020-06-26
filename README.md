@@ -57,5 +57,5 @@ The use of this framework is composed of the following steps:
     1. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md#usage-instructions).          
     1. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md#usage-instructions).
 
-1. use a playbook feature in the table
+1. Use a playbook feature in the table
 
