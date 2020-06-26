@@ -34,4 +34,4 @@ attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.ym
 
 ## Next Steps
 
-Please continue with the [next steps](../README.md#quick-start-usage-overview) in the process.
+Please continue with the [next steps](../README.md#ansible-apigee-private-cloud-features) in the process.
