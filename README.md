@@ -6,7 +6,7 @@ We describe the uses cases that are supported as follows:
 | Feature Name | Feature Description |
 | --- | --- |
 | Planet Installation | A Private Cloud installation of a Planet containing any number of nodes that follow our recommended HA topologies. |
-| Planet Expansion | A Private Cloud Planet can be expanded to either increase the size of the Cassandra Ring, increase transaction capacity with additional Routers and Message Processors or expand the Planet with up to 9 additional regions. |
+| Planet Expansion | A Private Cloud Planet can be expanded to either increase the size of the Cassandra Ring, increase transaction capacity with additional Routers and Message Processors. |
 | Disaster Recovery | These playbooks enable automated disaster recovery scenarios. These playbooks currently operate on Apigee components to remove, re-install, re-configured, scale up or scale down a Planet thereby providing the necessary functionality to drastically reduce the time to recover from a disaster. |
 | Planet Maintenance | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
 | Planet Upgrade | The playbooks included in this repository will perform Apigee platform upgrades. |
@@ -41,13 +41,13 @@ are available at <https://docs.ansible.com/ansible/latest/intro_installation.htm
 ## Quick Start: Usage Overview
 The use of this framework is composed of the following steps:
 
-1. Install git, rsync, tree and pip. Assuming you are.
+1. Install git, rsync, tree and pip.
 
     `sudo yum install -y git rsync tree python-pip`
 
-1. Clone this repository to `~/apigee-opdk-accelerator`.
+1. Clone this repository to `~/apigee-opdk-ansible`.
 
-    git clone https://github.com/chronos085/apigee-opdk-ansible.git ~/apigee-opdk-accelerator
+    git clone https://github.com/chronos085/apigee-opdk-ansible.git ~/apigee-opdk-ansible
     
 1. [Setup](README-setup.md) an Ansible control server and workspace.
 1. Configure Ansible and the Ansible inventory:
@@ -58,11 +58,11 @@ The use of this framework is composed of the following steps:
 1. Please update [credentials](README-credentials.md) and license.  
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
-1. Use `ansible-playbook` to [uninstall](post-installations/README-uninstall-platform.md) in case you need to clean the node (s) of other previous installations.
-1. Use `ansible-playbook` to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md) the platform.
-1. Use `ansible-playbook` to [check](infrastructure/port-requirements/README-port-requirements-platform.md) the ports of platform.
-1. Use `ansible-playbook` to [install](installations/README-install-platform.md) the platform.
-1. Use `ansible-playbook` to [install](installations/README-install-monit.md) monit.
-1. Use `ansible-playbook` to [create new organization](post-installations/README-create-org.md) on the platform.
-1. Use `ansible-playbook` to [create new environment](post-installations/README-create-env.md) on the platform.
+1. Use playbooks to [uninstall](post-installations/README-uninstall-platform.md) in case you need to clean the node (s) of other previous installations.
+1. Use playbooks to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md) the platform.
+1. Use playbooks to [check](infrastructure/port-requirements/README-port-requirements-platform.md) the ports of platform.
+1. Use playbooks to [install](installations/README-install-platform.md) the platform.
+1. Use playbooks to [install](installations/README-install-monit.md) monit.
+1. Use playbooks to [create new organization](post-installations/README-create-org.md) on the platform.
+1. Use playbooks to [create new environment](post-installations/README-create-env.md) on the platform.
 
