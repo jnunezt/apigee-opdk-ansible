@@ -48,6 +48,7 @@ The use of this framework is composed of the following steps:
 1. Clone this repository to `~/apigee-opdk-ansible`.
 
     git clone https://github.com/chronos085/apigee-opdk-ansible.git ~/apigee-opdk-ansible
+	cd ~/apigee-opdk-ansible
     
 1. [Setup](README-setup.md#usage-instructions) an Ansible control server and workspace.
 1. Configure Ansible and the Ansible inventory:
