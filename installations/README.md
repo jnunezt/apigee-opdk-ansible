@@ -20,17 +20,27 @@ Change directory to the installations folder:
 
 ## Quick Start: Usage Overview
 
-1. Please update [credentials](README-credentials.md#usage-instructions) and license.  
+1. Please update [credentials](README-credentials.md#usage-instructions) and license.
+
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
+
 1. Use playbooks to [uninstall](post-installations/README-uninstall-platform.md#usage-instructions) in case you need to clean the node (s) of other previous installations.
+
 1. Use playbooks to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md#usage-instructions) the platform.
+
 1. Use playbooks to [check](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions) the ports of platform.
+
 1. Use playbooks to [install](installations/README-install-platform.md#usage-instructions) the platform.
+
 1. Use playbooks to [install](installations/README-install-monit.md#usage-instructions) monit.
+
 1. Use playbooks to [create new organization](post-installations/README-create-org.md#usage-instructions) on the platform.
+
 1. Use playbooks to [create new environment](post-installations/README-create-env.md#usage-instructions) on the platform.
+
 1. Use playbooks to [create new virtualhost](post-installations/README-create-env.md#usage-instructions) on the platform.
+
 
 ## Next Steps
 
