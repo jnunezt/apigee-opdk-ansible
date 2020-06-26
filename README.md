@@ -5,7 +5,7 @@ We describe the uses cases that are supported as follows:
 
 | Feature Name | Feature Description |
 | --- | --- |
-| Planet Installation | A Private Cloud installation of a Planet containing any number of nodes that follow our recommended HA topologies. |
+| [Planet Installation](installations/README.md#usage-instructions) | A Private Cloud installation of a Planet containing any number of nodes that follow our recommended HA topologies. |
 | Planet Expansion | A Private Cloud Planet can be expanded to either increase the size of the Cassandra Ring, increase transaction capacity with additional Routers and Message Processors. |
 | Disaster Recovery | These playbooks enable automated disaster recovery scenarios. These playbooks currently operate on Apigee components to remove, re-install, re-configured, scale up or scale down a Planet thereby providing the necessary functionality to drastically reduce the time to recover from a disaster. |
 | Planet Maintenance | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
@@ -56,15 +56,4 @@ The use of this framework is composed of the following steps:
 
     1. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md#usage-instructions).          
     1. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md#usage-instructions).
-	
-1. Please update [credentials](README-credentials.md#usage-instructions) and license.  
-1. Please review and update the runtime attributes as needed. Update common installation 
-attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
-1. Use playbooks to [uninstall](post-installations/README-uninstall-platform.md#usage-instructions) in case you need to clean the node (s) of other previous installations.
-1. Use playbooks to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md#usage-instructions) the platform.
-1. Use playbooks to [check](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions) the ports of platform.
-1. Use playbooks to [install](installations/README-install-platform.md#usage-instructions) the platform.
-1. Use playbooks to [install](installations/README-install-monit.md#usage-instructions) monit.
-1. Use playbooks to [create new organization](post-installations/README-create-org.md#usage-instructions) on the platform.
-1. Use playbooks to [create new environment](post-installations/README-create-env.md#usage-instructions) on the platform.
 
