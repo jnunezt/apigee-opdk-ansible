@@ -43,9 +43,7 @@ The use of this framework is composed of the following steps:
 
 1. Install git, rsync, tree and pip. Assuming you are.
 
-    `sudo yum install -y git, rsync, tree, python-pip`
-	
-    `sudo pip install google-auth`
+    `sudo yum install -y git rsync tree python-pip`
 
 1. Clone this repository to `~/apigee-opdk-accelerator`.
 
