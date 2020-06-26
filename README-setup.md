@@ -1,4 +1,5 @@
-# Usage Instructions
+## Usage Instructions
+
 ## Terminal Window
 These scripts can be run from a terminal window. Please open your terminal and navigate to the folder
 containing the Ansible OPDK Accelerator. This can be accomplished as follows: 

@@ -49,20 +49,20 @@ The use of this framework is composed of the following steps:
 
     git clone https://github.com/chronos085/apigee-opdk-ansible.git ~/apigee-opdk-ansible
     
-1. [Setup](README-setup.md) an Ansible control server and workspace.
+1. [Setup](README-setup.md#usage-instructions) an Ansible control server and workspace.
 1. Configure Ansible and the Ansible inventory:
 
-    1. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md).          
-    1. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md).
+    1. Update the Ansible configuration as indicated in [Configure Ansible](README-configure-ansible.md#usage-instructions).          
+    1. Update the inventory template files as indicated in [Ansible Inventory](README-ansible-inventory.md#usage-instructions).
 	
-1. Please update [credentials](README-credentials.md) and license.  
+1. Please update [credentials](README-credentials.md#usage-instructions) and license.  
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
-1. Use playbooks to [uninstall](post-installations/README-uninstall-platform.md) in case you need to clean the node (s) of other previous installations.
-1. Use playbooks to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md) the platform.
-1. Use playbooks to [check](infrastructure/port-requirements/README-port-requirements-platform.md) the ports of platform.
-1. Use playbooks to [install](installations/README-install-platform.md) the platform.
-1. Use playbooks to [install](installations/README-install-monit.md) monit.
-1. Use playbooks to [create new organization](post-installations/README-create-org.md) on the platform.
-1. Use playbooks to [create new environment](post-installations/README-create-env.md) on the platform.
+1. Use playbooks to [uninstall](post-installations/README-uninstall-platform.md#usage-instructions) in case you need to clean the node (s) of other previous installations.
+1. Use playbooks to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md#usage-instructions) the platform.
+1. Use playbooks to [check](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions) the ports of platform.
+1. Use playbooks to [install](installations/README-install-platform.md#usage-instructions) the platform.
+1. Use playbooks to [install](installations/README-install-monit.md#usage-instructions) monit.
+1. Use playbooks to [create new organization](post-installations/README-create-org.md#usage-instructions) on the platform.
+1. Use playbooks to [create new environment](post-installations/README-create-env.md#usage-instructions) on the platform.
 
