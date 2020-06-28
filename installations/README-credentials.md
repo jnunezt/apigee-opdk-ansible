@@ -6,7 +6,7 @@ The credentials for the OPDK Accelerator are configured in the folder `~/.apigee
 credentials to be used for the Apigee Planet in the file `credentials.yml`. This folder also contains the Apigee license 
 material in a file named license.txt. 
 
-# Required Credentials
+## Required Credentials
 
 Please note that you are required to provide two sets of credentials. The first credential gives you access to the Apigee
 Software download site for the purpose of downloading Apigee Software. The second credential is the license material you 
@@ -28,7 +28,7 @@ Apigee credentials. Please update the attributes in the following section near t
 The OPDK Accelerator expects to find the license material in the file `~/.apigee-secure/license.txt`. It is sufficient 
 to create or update the file `~/.apigee-secure/license.txt` with a copy of the license material received from Apigee.
 
-# Credentials File
+## Credentials File
 
 The `~/.apigee/credentials.yml` file is heavily annotated. Please refer to this file to update the credentials you wish 
 use on the platform. Please note that `apigee_user_name` and `apigee_user_pass` are credentials provided by Apigee and
