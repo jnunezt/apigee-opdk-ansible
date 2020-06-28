@@ -34,7 +34,15 @@ For example, suppose that you are creating a 5 node Planet inventory for the `pr
 the prior step then the step that would give you the correct result would be 
 
         mkdir ~/.ansible/inventory/prod
-        cp -r ~/.ansible/inventory/templates/edge-5/ ~/.ansible/inventory/prod/.
+		
+        cp -r ~/.ansible/inventory/templates/{{ installation topologies }}/ ~/.ansible/inventory/prod/.
+		
+		topologies:
+			edge-5
+			edge-9
+			edge-13-double-ms
+			edge-12-clustered
+			edge-18-clustered
 
 ## Next Steps
 
