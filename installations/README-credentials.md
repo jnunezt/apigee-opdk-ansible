@@ -15,7 +15,7 @@ received from Apigee that represents your license to use the Apigee software.
 ## Update the Apigee User Name and Apigee User Password
 
 Please update the `~/.apigee-secure/credentials.yml` file with the credentials you received credentials for the purpose 
-of downloading Apigee software. The attributes `apigee_user_name` and `apigee_user_pass` should be updated with your
+of downloading Apigee software. The attributes `apigee_repo_user` and `apigee_repo_password` should be updated with your
 Apigee credentials. Please update the attributes in the following section near the top of the file 
 `~/.apigee-secure/credentials.yml`:
 
@@ -27,12 +27,6 @@ Apigee credentials. Please update the attributes in the following section near t
 
 The OPDK Accelerator expects to find the license material in the file `~/.apigee-secure/license.txt`. It is sufficient 
 to create or update the file `~/.apigee-secure/license.txt` with a copy of the license material received from Apigee.
-
-## Credentials File
-
-The `~/.apigee/credentials.yml` file is heavily annotated. Please refer to this file to update the credentials you wish 
-use on the platform. Please note that `apigee_user_name` and `apigee_user_pass` are credentials provided by Apigee and
-should be used as provided. It is expected that the remaining credentials would be reviewed and updated accordingly.  
 
 ## Edge Administrative User
 
