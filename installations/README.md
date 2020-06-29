@@ -20,7 +20,7 @@ Change directory to the installations folder:
 
 ## Quick Start: Usage Overview
 
-1. Please update credentials and license [here](README-credentials.md#usage-instructions).
+1. Please update credentials and license ([here](README-credentials.md#usage-instructions)).
 
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
