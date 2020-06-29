@@ -37,9 +37,9 @@ attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.ym
 
 1. Use playbooks to create new organization on the platform. ([here](post-installations/README-create-org.md#usage-instructions))
 
-1. Use playbooks to create new environment on the platform. ([here](post-installations/README-create-env.md#usage-instructions))
+1. Use playbooks to create new environment on the organization. ([here](post-installations/README-create-env.md#usage-instructions))
 
-1. Use playbooks to create new virtualhost on the platform. ([here](post-installations/README-create-env.md#usage-instructions))
+1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](post-installations/README-create-env.md#usage-instructions))
 
 
 ## Next Steps
