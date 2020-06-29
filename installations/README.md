@@ -1,24 +1,4 @@
-# Usage Instructions
-
-## Terminal Window
-These scripts can be run from a terminal window. Please open your terminal and navigate to the folder
-containing the Ansible OPDK Playbooks. This can be accomplished as follows: 
-
-    cd ~/apigee-opdk-ansible
-
-## Refresh Local Repository
-It may be necessary to update the local repository if it has been some time since the last update.
-This can be accomplished as follows: 
-
-    cd ~/apigee-opdk-ansible
-    git pull origin master
-
-## Change Directory to the Installations Folder
-Change directory to the installations folder:
-
-    cd ~/apigee-opdk-ansible/installations
-	
-## Ansible Apigee Private Cloud Installations
+# Ansible Apigee Private Cloud Installations
 The Ansible playbooks in this repository support a wide range of the installation
 We describe the uses cases that are supported as follows: 
 
@@ -26,10 +6,9 @@ We describe the uses cases that are supported as follows:
 | --- | --- |
 | [Single Region](single-region/README.md#usage-instructions) | A private cloud installation on a planet containing any number of nodes in a single region. |
 | [Multi Region](multi-region/README.md#usage-instructions) | A private cloud installation on a planet containing any number of nodes that follow our recommended HA topologies in more than one region. |
-| [Component](component/README.md#usage-instructions) | A component installation on a planet.. |
-| [Monit](monit/README.md#usage-instructions) | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
-| [Devportal](devportal/README.md#usage-instructions) | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
-| [Edge Microgateway](edge-microgateway/README.md#usage-instructions) | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
+| [Component](component/README.md#usage-instructions) | A component installation on a planet. |
+| [Monit](monit/README.md#usage-instructions) | A monit installation on a planet or on any component.  |
+| [Devportal](devportal/README.md#usage-instructions) | A developer portal installation for organization/environment.  |
 
 ## Quick Start: Usage Overview
 
@@ -38,21 +17,9 @@ We describe the uses cases that are supported as follows:
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
 
-1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations. [here](post-installations/README-uninstall-platform.md#usage-instructions)
+1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations. [here](../post-installations/uninstall/README.md#usage-instructions)
 
-1. Use playbooks to install infrastructure prerequisites the platform. ([here](installations/README-install-prerequisites-platform.md#usage-instructions))
-
-1. Use playbooks to check the ports of platform. ([here](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions))
-
-1. Use playbooks to install the platform. ([here](installations/README-install-platform.md#usage-instructions))
-
-1. Use playbooks to install monit. ([here](installations/README-install-monit.md#usage-instructions))
-
-1. Use playbooks to create new organization on the platform. ([here](post-installations/README-create-org.md#usage-instructions))
-
-1. Use playbooks to create new environment on the organization. ([here](post-installations/README-create-env.md#usage-instructions))
-
-1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](post-installations/README-create-env.md#usage-instructions))
+1. Use a playbooks [Features](README.md#ansible-apigee-private-cloud-installations)
 
 
 ## Next Steps
