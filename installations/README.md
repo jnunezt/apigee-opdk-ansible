@@ -19,7 +19,7 @@ attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.ym
 
 1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations. [here](../post-installations/uninstall/README.md#usage-instructions)
 
-1. Use a playbooks [Installations](README.md#ansible-apigee-private-cloud-installations)
+1. Use a playbooks [Installations](README.md#ansible-apigee-private-cloud-installations) of the table.
 
 
 ## Next Steps
