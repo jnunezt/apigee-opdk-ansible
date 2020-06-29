@@ -18,7 +18,7 @@ Change directory to the installations folder:
 
     cd ~/apigee-opdk-ansible/installations
 	
-# Ansible Apigee Private Cloud Installations
+## Ansible Apigee Private Cloud Installations
 The Ansible playbooks in this repository support a wide range of the installation
 We describe the uses cases that are supported as follows: 
 
