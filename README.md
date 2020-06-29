@@ -56,5 +56,5 @@ The use of this framework is composed of the following steps:
     1. Update the Ansible configuration as indicated in [Configure Ansible](README-configure.md#usage-instructions).          
     1. Update the inventory template files as indicated in [Ansible Inventory](README-inventory.md#usage-instructions).
 
-1. Use a playbooks [Features](README.md#ansible-apigee-private-cloud-features)
+1. Use a playbooks [Features](README.md#ansible-apigee-private-cloud-features) of the table.
 
