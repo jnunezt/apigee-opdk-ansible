@@ -20,26 +20,26 @@ Change directory to the installations folder:
 
 ## Quick Start: Usage Overview
 
-1. Please update credentials and license ([here](README-credentials.md#usage-instructions)).
+1. Please update credentials and license. ([here](README-credentials.md#usage-instructions))
 
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
 
-1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations [here](post-installations/README-uninstall-platform.md#usage-instructions).
+1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations. [here](post-installations/README-uninstall-platform.md#usage-instructions)
 
-1. Use playbooks to [install infrastructure prerequisites](installations/README-install-prerequisites-platform.md#usage-instructions) the platform.
+1. Use playbooks to install infrastructure prerequisites the platform. ([here](installations/README-install-prerequisites-platform.md#usage-instructions))
 
-1. Use playbooks to [check](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions) the ports of platform.
+1. Use playbooks to check the ports of platform. ([here](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions))
 
-1. Use playbooks to [install](installations/README-install-platform.md#usage-instructions) the platform.
+1. Use playbooks to install the platform. ([here](installations/README-install-platform.md#usage-instructions))
 
-1. Use playbooks to [install](installations/README-install-monit.md#usage-instructions) monit.
+1. Use playbooks to install monit. ([here](installations/README-install-monit.md#usage-instructions))
 
-1. Use playbooks to [create new organization](post-installations/README-create-org.md#usage-instructions) on the platform.
+1. Use playbooks to create new organization on the platform. ([here](post-installations/README-create-org.md#usage-instructions))
 
-1. Use playbooks to [create new environment](post-installations/README-create-env.md#usage-instructions) on the platform.
+1. Use playbooks to create new environment on the platform. ([here](post-installations/README-create-env.md#usage-instructions))
 
-1. Use playbooks to [create new virtualhost](post-installations/README-create-env.md#usage-instructions) on the platform.
+1. Use playbooks to create new virtualhost on the platform. ([here](post-installations/README-create-env.md#usage-instructions))
 
 
 ## Next Steps
