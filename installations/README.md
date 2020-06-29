@@ -17,6 +17,19 @@ This can be accomplished as follows:
 Change directory to the installations folder:
 
     cd ~/apigee-opdk-ansible/installations
+	
+# Ansible Apigee Private Cloud Installations
+The Ansible playbooks in this repository support a wide range of the installation
+We describe the uses cases that are supported as follows: 
+
+| Feature Name | Feature Description |
+| --- | --- |
+| [Multi Node](installations/README.md#usage-instructions) | A Private Cloud installation of a Planet containing any number of nodes that follow our recommended HA topologies. |
+| [Multi Region](installations/README.md#usage-instructions) | A Private Cloud Planet can be expanded to either increase the size of the Cassandra Ring, increase transaction capacity with additional Routers and Message Processors. |
+| [Component](installations/README.md#usage-instructions) | These playbooks enable automated disaster recovery scenarios. These playbooks currently operate on Apigee components to remove, re-install, re-configured, scale up or scale down a Planet thereby providing the necessary functionality to drastically reduce the time to recover from a disaster. |
+| [Monit](installations/README.md#usage-instructions) | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
+| [Devportal](installations/README.md#usage-instructions) | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
+| [Edge Microgateway](installations/README.md#usage-instructions) | These playbooks are constructed by composing functionality into Ansible modules called roles to achieve specific use cases. This approach has enabled this framework to re-use the roles that are combined in new ways to provide automation support to the maintenance activities that the Apigee platform requires.  |
 
 ## Quick Start: Usage Overview
 
