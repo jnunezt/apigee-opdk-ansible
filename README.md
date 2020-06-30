@@ -5,8 +5,8 @@ We describe the uses cases that are supported as follows:
 
 | Feature Name | Feature Description |
 | --- | --- |
-| [Planet Installation](installations/README.md#usage-instructions) | A Private Cloud installation of a Planet containing any number of nodes that follow our recommended HA topologies. |
-| [Planet Expansion](expand/README.md#usage-instructions) | A Private Cloud Planet can be expanded to either increase the size of the Cassandra Ring, increase transaction capacity with additional Routers and Message Processors. |
+| [Planet Installation](installations/README.md#ansible-apigee-private-cloud-installations) | A Private Cloud installation of a Planet containing any number of nodes that follow our recommended HA topologies. |
+| [Planet Expansion](expand/README.md#ansible-apigee-private-cloud-installations-expansion) | A Private Cloud Planet can be expanded to either increase the size of the Cassandra Ring, increase transaction capacity with additional Routers and Message Processors. |
 | [Disaster Recovery](post-installations/README.md#usage-instructions) | These playbooks enable automated disaster recovery scenarios. These playbooks currently operate on Apigee components to remove, re-install, re-configured, thereby providing the necessary functionality to drastically reduce the time to recover from a disaster. |
 
 ## Assumptions 
