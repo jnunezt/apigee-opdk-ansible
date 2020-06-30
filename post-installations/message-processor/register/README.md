@@ -32,6 +32,11 @@ Copy template to generate installer by register message-processor
 Edit parameters in the `mp-{org}-{env}.yml` role(apigee-opdk-setup-env) for the new register message-processor
 
     vi mp-{org}-{env}.yml
+	
+	Edit tag vars:
+		org
+		env
+		uuid
 
 ## Create register message-processor 
 
