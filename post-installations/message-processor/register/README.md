@@ -13,35 +13,32 @@ This can be accomplished as follows:
     cd ~/apigee-opdk-ansible
     git pull origin master
 
-## Change Directory to the Cassandra install Folder
-Change directory to the Cassandra install folder:
+## Change Directory to the Message Processor Folder
+Change directory to the Message Processor folder:
 
-    cd ~/apigee-opdk-ansible/expand/cassandra/installation/{ types install }
-	
-	types install:
-		single-region
-		multi-region
+    cd ~/apigee-opdk-accelerator/post-installations/message-processor/register
 
 ## Download Dependencies
 Use `ansible-galaxy` to download dependencies in the following way: 
 
     ansible-galaxy install -r requirements.yml -f
 
-## Playbook Execution
+## Copy Template
+Copy template to generate installer by register message-processor
 
-This tasks assume that the user has sudo privilege with no password prompt. Please invoke `install cassandra` in the following way:
-    
-    ansible-playbook preinstall.yml
+    cp template.yml mp-{org}-{env}.yml
 	
-	ansible-playbook install.yml
+## Edit installer
+Edit parameters in the `mp-{org}-{env}.yml` role(apigee-opdk-setup-env) for the new register message-processor
+
+    vi mp-{org}-{env}.yml
+
+## Create register message-processor 
+
+Please invoke `register` in the following way:
+    
+    ansible-playbook mp-{org}-{env}.yml
 
 If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
 
-    ansible-playbook preinstall.yml -K
-	
-	ansible-playbook install.yml -K
-    
-
-## Next Steps
-
-Please continue with the [next steps](../../README.md#ansible-apigee-private-cloud-installations-expansion) in the process.
+    ansible-playbook mp-{org}-{env}.yml -K
