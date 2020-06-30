@@ -1,11 +1,4 @@
 ---
-- name: Uninstall Platform
-  hosts: edge
-  tags: ['all']
-  strategy: free
-  roles:
-    - apigee-opdk-setup-node-uninstall
-
 - name: Router
   hosts: router,rmp
   tags: ['router','r']

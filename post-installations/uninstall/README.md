@@ -10,8 +10,8 @@ and the contained README. This folder contains Ansible playbooks that will unins
 
 ## Assumptions
 
-1. [Configuration](../README.md#usage-overview ) steps have been completed. 
-1. [Activate an Ansible Configuration](../README-configure-ansible.md) has been completed.
+1. [Configuration](../README.md#usage-overview ) has been completed.
+1. [Credentials](../README-configure-ansible.md) has been completed.
 
 ## Basic Usage
 We have created an `ansible-galaxy` requirements file `requirements.yml` that will download and install the roles 
