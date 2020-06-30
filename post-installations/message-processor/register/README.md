@@ -13,10 +13,10 @@ This can be accomplished as follows:
     cd ~/apigee-opdk-ansible
     git pull origin master
 
-## Change Directory to the Router & Message Processor install Folder
-Change directory to the Router & Message Processor install folder:
+## Change Directory to the Cassandra install Folder
+Change directory to the Cassandra install folder:
 
-    cd ~/apigee-opdk-ansible/expand/rmp/installation/{ types install }
+    cd ~/apigee-opdk-ansible/expand/cassandra/installation/{ types install }
 	
 	types install:
 		single-region
@@ -29,20 +29,17 @@ Use `ansible-galaxy` to download dependencies in the following way:
 
 ## Playbook Execution
 
-This tasks assume that the user has sudo privilege with no password prompt. Please invoke `install rmp` in the following way:
+This tasks assume that the user has sudo privilege with no password prompt. Please invoke `install cassandra` in the following way:
     
     ansible-playbook preinstall.yml
 	
 	ansible-playbook install.yml
-	
 
 If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
 
     ansible-playbook preinstall.yml -K
 	
 	ansible-playbook install.yml -K
-	
-## associate message processor to your organization/environment [here](../../../post-installations/message-processor/register/README.md#usage-instructions)
     
 
 ## Next Steps
