@@ -37,11 +37,11 @@ We describe the uses cases that are supported as follows:
 
 1. Use playbooks to install monit. ([here](../monit/README.md#usage-instructions))
 
-1. Use playbooks to create new organization on the platform. ([here](post-installations/README-create-org.md#usage-instructions))
+1. Use playbooks to create new organization on the platform. ([here](../../post-installations/organization/README.md#usage-instructions))
 
-1. Use playbooks to create new environment on the organization. ([here](post-installations/README-create-env.md#usage-instructions))
+1. Use playbooks to create new environment on the organization. ([here](../../post-installations/environment/README.md#usage-instructions))
 
-1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](post-installations/README-create-env.md#usage-instructions))
+1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](../../post-installations/virtualhost/README.md#usage-instructions))
 
 
 ## Next Steps
