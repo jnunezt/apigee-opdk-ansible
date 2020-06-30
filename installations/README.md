@@ -17,7 +17,7 @@ We describe the uses cases that are supported as follows:
 1. Please review and update the runtime attributes as needed. Update common installation 
 attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
 
-1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations. [here](../post-installations/uninstall/README.md#usage-instructions)
+1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations. [here](../post-installations/uninstall/node/README.md#usage-instructions)
 
 1. Use a playbooks [Installations](README.md#ansible-apigee-private-cloud-installations) of the table.
 
