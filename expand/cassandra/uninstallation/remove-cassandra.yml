@@ -6,7 +6,7 @@
     nodetool: /opt/apigee/apigee-cassandra/bin/nodetool
     apigee_service: /opt/apigee/apigee-service/bin/apigee-service
     apigee_home: /opt/apigee
-    ipaddr: 10.128.15.193
+    ipaddr: xx.xx.xx.xx
     property_folders:
       - '~/.apigee'
       - '~/.apigee-secure'
