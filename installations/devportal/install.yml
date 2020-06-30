@@ -1,0 +1,7 @@
+---
+- name: Install Drupal8 by Apigee
+  hosts: devportal
+  tags: ['drupal']
+  strategy: free
+  roles:
+    - apigee-opdk-setup-devportal-install
