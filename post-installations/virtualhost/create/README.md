@@ -36,7 +36,7 @@ Copy template to generate create virtualhost by organization/environment
 	
 	cd vhost-{org}-{env}
 	
-## (Option HTTP) Create VirtualHost
+### (Option HTTP) Create VirtualHost
 Edit vars & json for the new virtualhost
 
     vi create.yml
@@ -47,7 +47,7 @@ Edit vars & json for the new virtualhost
 			
 	vi vhost.json
 	
-## (Option HTTPS) Create VirtualHost, assuming I already run the keystore [here](../../keystore/README.md#usage-instructions)
+### (Option HTTPS) Create VirtualHost, assuming I already run the keystore [here](../../keystore/README.md#usage-instructions)
 Edit vars & json for the new virtualhost
 
     vi create.yml
