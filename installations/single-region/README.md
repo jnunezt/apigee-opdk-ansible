@@ -31,7 +31,7 @@ We describe the uses cases that are supported as follows:
 
 1. Use playbooks to install infrastructure prerequisites the platform (table pre-install).
 
-1. Use playbooks to check the ports of platform. ([here](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions))
+1. Use playbooks to check the ports of platform. ([here](../../infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions))
 
 1. Use playbooks to install the platform. ([here](installations/README-install-platform.md#usage-instructions))
 
