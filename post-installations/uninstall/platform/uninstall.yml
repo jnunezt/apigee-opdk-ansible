@@ -1,7 +1,0 @@
----
-- name: Uninstall Platform
-  hosts: edge
-  tags: ['all']
-  strategy: free
-  roles:
-    - apigee-opdk-setup-node-uninstall

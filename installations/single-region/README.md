@@ -13,6 +13,11 @@ This can be accomplished as follows:
     cd ~/apigee-opdk-ansible
     git pull origin master
 
+## Assumptions
+
+1. [Configuration](../../README.md#quick-start-usage-overview) steps have been completed. 
+1. [Activate an Ansible Configuration](../README.md#quick-start-usage-overview) has been completed.
+
 ## Change Directory to the Installations Folder
 Change directory to the installations folder:
 
