@@ -1,43 +1,51 @@
-# Apigee Edge Installations
+# Usage Instructions
 
-The folders in this section perform primary installations of the Apigee platform. These folders except mirror contain 
-the playbook `uninstall.yml` that will perform the installation of Apigee Edge component as indicated by the folder name 
-and the contained README. This folder contains Ansible playbooks that will uninstall the following Apigee components:
+## Terminal Window
+These scripts can be run from a terminal window. Please open your terminal and navigate to the folder
+containing the Ansible OPDK Playbooks. This can be accomplished as follows: 
 
-| Component Name | Description | 
-|--- | --- |
-| [Apigee Edge](multi-node) | Uninstalls a multi-node and multi-region Apigee Edge planet |
+    cd ~/apigee-opdk-ansible
 
-## Assumptions
+## Refresh Local Repository
+It may be necessary to update the local repository if it has been some time since the last update.
+This can be accomplished as follows: 
 
-1. [Configuration](../README.md#usage-overview ) has been completed.
-1. [Credentials](../README-configure-ansible.md) has been completed.
+    cd ~/apigee-opdk-ansible
+    git pull origin master
 
-## Basic Usage
-We have created an `ansible-galaxy` requirements file `requirements.yml` that will download and install the roles 
-used by this playbook. You can use `ansible-galaxy` in the following way:
+## Change Directory to the Uninstall Folder
+Change directory to the Uninstall folder:
 
+    cd ~/apigee-opdk-accelerator/post-installations/uninstall
 
-    cd ~/apigee-opdk-accelerator/post-installations/uninstall/{{ type uninstall }}
+## Download Dependencies
+Use `ansible-galaxy` to download dependencies in the following way: 
+
     ansible-galaxy install -r requirements.yml -f
+
+## (Option 1) Playbook Execution Uninstall Platform
+
+This tasks assume that the user has sudo privilege with no password prompt. Please invoke `uninstall` in the following way:
     
-Once the roles are installed you can invoke the uninstall process as follows:
+    ansible-playbook node/uninstall-all.yml
 
-    ansible-playbook uninstall.yml
+If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
 
-### Executing Portions of the Installation
+    ansible-playbook node/uninstall-all.yml -K
+
+## Executing Portions of the Uninstallation
 It is necessary to many times only execute a portion of the overall installation script. This has been enabled by the 
 use of [Ansible tags](http://docs.ansible.com/ansible/latest/cli/ansible-playbook.html#cmdoption-ansible-playbook-tags). 
 Ansible tags are used extensively to execute functionally significant portions of the installation. These tags have been 
 used consistently across all the installation playbooks. In some cases, the tags perform slightly different tasks but 
 achieve the semantic functionality ascribed by the name. A sample tag usage that invokes the `ds` tag is as follows: 
 
-    ansible-playbook uninstall.yml --tags=ds
+    ansible-playbook node/uninstall.yml --tags=ds
     
 ### Tags Listing
 You can discover the names of tags using the Ansible flag --list-tags as follows: 
 
-    ansible-playbook uninstall.yml --list-tags
+    ansible-playbook node/uninstall.yml --list-tags
     
 The following table lists the main tag names and a description of the functionality that can be invoked. Additional, tags
 are available and sometimes added organically. It is expected that you will read the roles to understand how tags that are
