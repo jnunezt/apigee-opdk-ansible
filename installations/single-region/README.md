@@ -15,8 +15,8 @@ This can be accomplished as follows:
 
 ## Assumptions
 
-1. [Configuration](../../README.md#quick-start-usage-overview) steps have been completed. 
-1. [Activate an Ansible Configuration](../README.md#quick-start-usage-overview) has been completed.
+1. [Configuration](../../README.md#quick-start-usage-overview) has been completed.
+1. [Credentials](../README.md#quick-start-usage-overview) has been completed.
 
 ## Change Directory to the Installations Folder
 Change directory to the installations folder:
