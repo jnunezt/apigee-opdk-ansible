@@ -18,7 +18,7 @@ Change directory to the Install folder:
 
     cd ~/apigee-opdk-ansible/installations/single-region/install
 
-# Playbook Execution Standard Installations
+## (Option 1) Playbook Execution Standard Installations
 
 This tasks assume that the user has sudo privilege with no password prompt. Please invoke `install standard` in the following way:
     
@@ -28,7 +28,7 @@ If this task fails due to sudo privilege, please re-invoke the script and pass t
 
     ansible-playbook standard/install.yml -K
 	
-# Playbook Execution External Node Ldap Installations (use when the ldap server is outside the management server)
+## (Option 2) Playbook Execution External Node Ldap Installations (use when the ldap server is outside the management server)
 
 This tasks assume that the user has sudo privilege with no password prompt. Please invoke `install external node ldap` in the following way:
     
