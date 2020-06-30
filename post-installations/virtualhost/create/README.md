@@ -42,8 +42,8 @@ Edit vars & json for the new virtualhost
     vi create.yml
 	
 		edit vars:
-			org: opdk
-			env: test
+			org
+			env
 			
 	vi vhost.json
 	
@@ -53,8 +53,8 @@ Edit vars & json for the new virtualhost
     vi create.yml
 	
 		edit vars:
-			org: opdk
-			env: test
+			org
+			env
 			
 	vi vhost.json
 

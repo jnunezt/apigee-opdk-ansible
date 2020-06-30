@@ -1,5 +1,5 @@
 ---
-- name: Create virtual hosts
+- name: Create KeyStore
   hosts: ms[0]
   gather_facts: no
   vars:
