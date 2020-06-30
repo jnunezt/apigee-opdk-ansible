@@ -64,4 +64,4 @@ not listed here will function.
 
 ## Next Steps
 
-Please continue with the [next steps](../../../README.md#quick-start-usage-overview) in the process.
+Please continue with the [next steps](../../../installations/README.md#quick-start-usage-overview) in the process.
