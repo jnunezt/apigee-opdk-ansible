@@ -4,8 +4,10 @@ We describe the uses cases that are supported as follows:
 
 | Feature Name | Feature Description |
 | --- | --- |
-| [Cassandra](cassandra/README.md#usage-instructions) | A private cloud installation on a planet scale up or scale down any number of cassandra nodes. |
-| [Router & Message Processor](rmp/README.md#usage-instructions) | A private cloud installation on a planet that increase transaction capacity with additional Routers and Message Processors on any number of nodes. |
+| [Cassandra (scale up)](cassandra/README.md#usage-instructions) | A private cloud installation on a planet scale up any number of cassandra nodes. |
+| [Cassandra (scale down)](cassandra/README.md#usage-instructions) | A private cloud installation on a planet scale down any number of cassandra nodes. |
+| [Router & Message Processor (scale up)](rmp/README.md#usage-instructions) | A private cloud installation on a planet that increase transaction capacity with additional Routers and Message Processors on any number of nodes. |
+| [Router & Message Processor (scale down)](rmp/README.md#usage-instructions) | A private cloud installation on a planet that increase transaction capacity with additional Routers and Message Processors on any number of nodes. |
 
 
 ## Next Steps
