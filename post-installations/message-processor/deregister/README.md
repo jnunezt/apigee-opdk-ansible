@@ -16,7 +16,7 @@ This can be accomplished as follows:
 ## Change Directory to the Message Processor Folder
 Change directory to the Message Processor folder:
 
-    cd ~/apigee-opdk-accelerator/post-installations/message-processor/desregister
+    cd ~/apigee-opdk-accelerator/post-installations/message-processor/deregister
 
 ## Download Dependencies
 Use `ansible-galaxy` to download dependencies in the following way: 
@@ -24,12 +24,12 @@ Use `ansible-galaxy` to download dependencies in the following way:
     ansible-galaxy install -r requirements.yml -f
 
 ## Copy Template
-Copy template to generate installer by register message-processor
+Copy template to generate installer by deregister message-processor
 
     cp template.yml mp-{org}-{env}.yml
 	
 ## Edit installer
-Edit parameters in the `mp-{org}-{env}.yml` role(apigee-opdk-setup-env) for the new register message-processor
+Edit parameters in the `mp-{org}-{env}.yml` role(apigee-opdk-setup-env) for the new deregister message-processor
 
     vi mp-{org}-{env}.yml
 	
@@ -40,9 +40,9 @@ Edit parameters in the `mp-{org}-{env}.yml` role(apigee-opdk-setup-env) for the 
 		region
 		pod
 
-## Create register message-processor 
+## Create deregister message-processor 
 
-Please invoke `register` in the following way:
+Please invoke `deregister` in the following way:
     
     ansible-playbook mp-{org}-{env}.yml
 
