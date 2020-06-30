@@ -33,9 +33,9 @@ We describe the uses cases that are supported as follows:
 
 1. Use playbooks to check the ports of platform. ([here](../../infrastructure/port-requirements/README.md#usage-instructions))
 
-1. Use playbooks to install the platform. ([here](installations/README-install-platform.md#usage-instructions))
+1. Use playbooks to install the platform. ([here](install/README.md#usage-instructions))
 
-1. Use playbooks to install monit. ([here](installations/README-install-monit.md#usage-instructions))
+1. Use playbooks to install monit. ([here](../monit/README.md#usage-instructions))
 
 1. Use playbooks to create new organization on the platform. ([here](post-installations/README-create-org.md#usage-instructions))
 

@@ -27,13 +27,13 @@ Use `ansible-galaxy` to download dependencies in the following way:
 
 This tasks assume that the user has sudo privilege with no password prompt. Please invoke `preinstall` in the following way:
     
-    ansible-playbook prerequieriments.yml
+    ansible-playbook prerequirements.yml
 	
 	ansible-playbook configfile.yml
 
 If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
 
-    ansible-playbook prerequieriments.yml -K
+    ansible-playbook prerequirements.yml -K
 	
 	ansible-playbook configfile.yml -K
     
