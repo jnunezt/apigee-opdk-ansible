@@ -16,7 +16,7 @@ This can be accomplished as follows:
 ## Change Directory to the VirtualHost Folder
 Change directory to the VirtualHost folder:
 
-    cd ~/apigee-opdk-accelerator/post-installations/virtualhost/create/{types vhost}
+    cd ~/apigee-opdk-accelerator/post-installations/virtualhost/create/{ types vhost }
 	
 	types vhost:
 		http
