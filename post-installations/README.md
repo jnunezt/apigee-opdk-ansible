@@ -1,5 +1,5 @@
-# Ansible Apigee Private Cloud Disaster Recovery
-The Ansible playbooks in this repository support a range of the installation expansion
+# Ansible Apigee Private Cloud Recovery
+The Ansible playbooks in this repository support a range of the recovery
 We describe the uses cases that are supported as follows: 
 
 | Feature Name | Feature Description |
