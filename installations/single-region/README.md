@@ -46,7 +46,7 @@ We describe the uses cases that are supported as follows:
 
 1. Use playbooks to create new environment on the organization. ([here](../../post-installations/environment/README.md#usage-instructions))
 
-1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](../../post-installations/virtualhost/README.md#usage-instructions))
+1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](../../post-installations/virtualhost/create/README.md#usage-instructions))
 
 
 ## Next Steps
