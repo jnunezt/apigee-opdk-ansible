@@ -6,7 +6,6 @@ We describe the uses cases that are supported as follows:
 | --- | --- |
 | [Single Region](single-region/README.md#usage-instructions) | A private cloud installation on a planet containing any number of nodes in a single region. |
 | [Multi Region](multi-region/README.md#usage-instructions) | A private cloud installation on a planet containing any number of nodes that follow our recommended HA topologies in more than one region. |
-| [Component](component/README.md#usage-instructions) | A component installation on a planet. |
 | [Monit](monit/README.md#usage-instructions) | A monit installation on a planet or on any component.  |
 | [Devportal](devportal/README.md#usage-instructions) | A developer portal installation for organization/environment.  |
 

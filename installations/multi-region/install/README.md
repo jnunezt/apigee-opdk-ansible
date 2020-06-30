@@ -1,57 +1,44 @@
-# Apigee Edge Installations
+# Usage Instructions
 
-The folders in this section perform primary installations of the Apigee platform. These folders except mirror contain 
-the playbook `install.yml` that will perform the installation of Apigee Edge component as indicated by the folder name 
-and the contained README. This folder contains Ansible playbooks that will install the following Apigee components:
+## Terminal Window
+These scripts can be run from a terminal window. Please open your terminal and navigate to the folder
+containing the Ansible OPDK Playbooks. This can be accomplished as follows: 
 
-| Component Name | Description | 
-|--- | --- |
-| [Apigee Edge](multi-node) | Installs a multi-node and multi-region Apigee Edge planet |
-| [Apigee Developer Portal](devportal) | Installs Apigee Developer Portal |
-| [Apigee Microgateway](edge-microgateway) | Installs Apigee Microgateway |
+    cd ~/apigee-opdk-ansible
 
-## Assumptions
+## Refresh Local Repository
+It may be necessary to update the local repository if it has been some time since the last update.
+This can be accomplished as follows: 
 
-1. [Configuration](../README.md#usage-overview ) steps have been completed. 
-1. [Activate an Ansible Configuration](../README-configure-ansible.md) has been completed.
+    cd ~/apigee-opdk-ansible
+    git pull origin master
 
-## Basic Usage
-Open the terminal and change directory to the installations folder:
+## Change Directory to the Install Folder
+Change directory to the Install folder:
 
-    cd ~/apigee-opdk-accelerator/installations/{{ type infrastructure }}/install/{{ type installation }}
+    cd ~/apigee-opdk-ansible/installations/multi-region/install
+
+## (Option 1) Playbook Execution Standard Installations
+
+This tasks assume that the user has sudo privilege with no password prompt. Please invoke `install standard` in the following way:
     
-Once the roles are installed you can invoke the install process as follows:
+    ansible-playbook standard/install.yml
 
-    ansible-playbook install.yml
+If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
 
-### Executing Portions of the Installation
-It is necessary to many times only execute a portion of the overall installation script. This has been enabled by the 
-use of [Ansible tags](http://docs.ansible.com/ansible/latest/cli/ansible-playbook.html#cmdoption-ansible-playbook-tags). 
-Ansible tags are used extensively to execute functionally significant portions of the installation. These tags have been 
-used consistently across all the installation playbooks. In some cases, the tags perform slightly different tasks but 
-achieve the semantic functionality ascribed by the name. A sample tag usage that invokes the `ds` tag is as follows: 
+    ansible-playbook standard/install.yml -K
+	
+## (Option 2) Playbook Execution External Node Ldap Installations (use when the ldap server is outside the management server)
 
-    ansible-playbook install.yml --tags=ds
+This tasks assume that the user has sudo privilege with no password prompt. Please invoke `install external node ldap` in the following way:
     
-### Tags Listing
-You can discover the names of tags using the Ansible flag --list-tags as follows: 
+    ansible-playbook external-node-ldap/install.yml
 
-    ansible-playbook install.yml --list-tags
+If this task fails due to sudo privilege, please re-invoke the script and pass the sudo flag in the following way: 
+
+    ansible-playbook external-node-ldap/install.yml -K
     
-The following table lists the main tag names and a description of the functionality that can be invoked. Additional, tags
-are available and sometimes added organically. It is expected that you will read the roles to understand how tags that are
-not listed here will function. 
-
-| Tag Name | Description |
-| --- | --- |
-| ds | Install the [ds](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
-| ms | Install the [ms](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
-| rmp | Install the [rmp](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
-| r | Install the [r](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
-| mp | Install the [mp](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
-| qpid | Install the [qs](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile | 
-| pg | Install the [ps](https://docs.apigee.com/private-cloud/latest/install-edge-components-node#specifyingthecomponentstoinstall) profile |
 
 ## Next Steps
 
-Please continue with the [next steps](../README.md#usage-overview) in the process.
+Please continue with the [next steps](../README.md#quick-start-usage-overview) in the process.

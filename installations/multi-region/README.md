@@ -13,45 +13,40 @@ This can be accomplished as follows:
     cd ~/apigee-opdk-ansible
     git pull origin master
 
+## Assumptions
+
+1. [Configuration](../../README.md#quick-start-usage-overview) has been completed.
+1. [Credentials](../README.md#quick-start-usage-overview) has been completed.
+
 ## Change Directory to the Installations Folder
 Change directory to the installations folder:
 
-    cd ~/apigee-opdk-ansible/installations
+    cd ~/apigee-opdk-ansible/installations/multi-region
 	
-## Ansible Apigee Private Cloud Installations
-The Ansible playbooks in this repository support a wide range of the installation
+## Pre-Install Multi Region
+The Ansible playbooks in this repository support a wide range of the installation prerequisites
 We describe the uses cases that are supported as follows: 
 
 | Feature Name | Feature Description |
 | --- | --- |
-| [Single Region](single-region/README.md#usage-instructions) | A private cloud installation on a planet containing any number of nodes in a single region. |
-| [Multi Region](multi-region/README.md#usage-instructions) | A private cloud installation on a planet containing any number of nodes that follow our recommended HA topologies in more than one region. |
-| [Component](component/README.md#usage-instructions) | A component installation on a planet. |
-| [Monit](monit/README.md#usage-instructions) | A monit installation on a planet or on any component.  |
-| [Devportal](devportal/README.md#usage-instructions) | A developer portal installation for organization/environment.  |
+| [Full](pre-install/full/README.md#usage-instructions) | A private cloud installation on a planet that contains complete steps. |
+| [Segmented](pre-install/segmented/README.md#usage-instructions) | A private cloud installation on a planet that contains small steps (use it for many nodes). |
 
 ## Quick Start: Usage Overview
 
-1. Please update credentials and license. ([here](README-credentials.md#usage-instructions))
+1. Use playbooks to install infrastructure prerequisites the platform ([Table Pre-Install Multi Region](README.md#pre-install-multi-region)).
 
-1. Please review and update the runtime attributes as needed. Update common installation 
-attributes like `opdk_version` that is stored in `~/.apigee/custom-properties.yml`.
+1. Use playbooks to check the ports of platform. ([here](../../infrastructure/port-requirements/README.md#usage-instructions))
 
-1. Use playbooks to uninstall in case you need to clean the node (s) of other previous installations. [here](post-installations/README-uninstall-platform.md#usage-instructions)
+1. Use playbooks to install the platform. ([here](install/README.md#usage-instructions))
 
-1. Use playbooks to install infrastructure prerequisites the platform. ([here](installations/README-install-prerequisites-platform.md#usage-instructions))
+1. Use playbooks to install monit. ([here](../monit/README.md#usage-instructions))
 
-1. Use playbooks to check the ports of platform. ([here](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions))
+1. Use playbooks to create new organization on the platform. ([here](../../post-installations/organization/README.md#usage-instructions))
 
-1. Use playbooks to install the platform. ([here](installations/README-install-platform.md#usage-instructions))
+1. Use playbooks to create new environment on the organization. ([here](../../post-installations/environment/README.md#usage-instructions))
 
-1. Use playbooks to install monit. ([here](installations/README-install-monit.md#usage-instructions))
-
-1. Use playbooks to create new organization on the platform. ([here](post-installations/README-create-org.md#usage-instructions))
-
-1. Use playbooks to create new environment on the organization. ([here](post-installations/README-create-env.md#usage-instructions))
-
-1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](post-installations/README-create-env.md#usage-instructions))
+1. Use playbooks to create new virtualhost on the organization/enviroment. ([here](../../post-installations/virtualhost/README.md#usage-instructions))
 
 
 ## Next Steps
