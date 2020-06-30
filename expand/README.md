@@ -1,5 +1,5 @@
 # Ansible Apigee Private Cloud Installations Expansion
-The Ansible playbooks in this repository support a wide range of the installation expansion
+The Ansible playbooks in this repository support a range of the installation expansion
 We describe the uses cases that are supported as follows: 
 
 | Feature Name | Feature Description |
