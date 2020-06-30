@@ -29,7 +29,7 @@ We describe the uses cases that are supported as follows:
 
 ## Quick Start: Usage Overview
 
-1. Use playbooks to install infrastructure prerequisites the platform (table pre-install).
+1. Use playbooks to install infrastructure prerequisites the platform ([table pre-install](README.md#pre-install-single-region)).
 
 1. Use playbooks to check the ports of platform. ([here](../../infrastructure/port-requirements/README.md#usage-instructions))
 
