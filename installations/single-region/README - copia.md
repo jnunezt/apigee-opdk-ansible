@@ -17,19 +17,10 @@ This can be accomplished as follows:
 Change directory to the installations folder:
 
     cd ~/apigee-opdk-ansible/installations/single-region
-	
-# Pre-Install Single Region
-The Ansible playbooks in this repository support a wide range of the installation prerequisites
-We describe the uses cases that are supported as follows: 
-
-| Feature Name | Feature Description |
-| --- | --- |
-| [Full](pre-install/full/README.md#usage-instructions) | A private cloud installation on a planet that contains complete steps. |
-| [Segmented](pre-install/segmented/README.md#usage-instructions) | A private cloud installation on a planet that contains small steps (use it for many nodes). |
 
 ## Quick Start: Usage Overview
 
-1. Use playbooks to install infrastructure prerequisites the platform (table pre-install).
+1. Use playbooks to install infrastructure prerequisites the platform. ([here](installations/README-install-prerequisites-platform.md#usage-instructions))
 
 1. Use playbooks to check the ports of platform. ([here](infrastructure/port-requirements/README-port-requirements-platform.md#usage-instructions))
 
