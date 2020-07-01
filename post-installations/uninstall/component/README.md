@@ -43,10 +43,17 @@ not listed here will function.
 
 | Tag Name | Description |
 | --- | --- |
-| ds | Uninstall Cassandra & Zookeeper | 
+| ds | Uninstall Cassandra | 
+| zk | Uninstall Zookeeper | 
+| ldap | Uninstall OpenLDAP | 
 | ms | Uninstall Management Server | 
 | rmp | Uninstall Router & Message Processor | 
 | r | Uninstall Router | 
 | mp | Uninstall Message Processor | 
 | qpid | Uninstall Qpid | 
 | pg | Uninstall Postgresql |
+
+
+## Next Steps
+
+Please continue with the [next steps](../README.md#ansible-apigee-private-cloud-recovery) in the process.
