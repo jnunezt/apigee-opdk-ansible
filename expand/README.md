@@ -13,45 +13,42 @@ We describe the uses cases that are supported as follows:
 
 1. Assuming that we configured the inventory to use `~/.ansible/inventory/prod`
 
-### Edit inventory files for all data centers for new cassandra nodes
+	### Edit inventory files for all data centers for new cassandra nodes
 
-1. Add new nodes on inventory
+	1. Add new nodes on inventory
 
-	[dc-1]
-	
-	#Listing of all nodes in data center
-	
-	apigee_101 ansible_host=xx.xx.xx.xx
-	
-	apigee_102 ansible_host=xx.xx.xx.xx
-	
-1. Add new nodes cassandra in group
+		`[dc-1]
+		#Listing of all nodes in data center
+		apigee_101 ansible_host=xx.xx.xx.xx
+		apigee_102 ansible_host=xx.xx.xx.xx`
+		
+	1. Add new nodes cassandra in group
 
-	[dc_1_ds]
-	#Listing of all old nodes cassandra
-	apigee_101
-	apigee_102
+		[dc_1_ds]
+		#Listing of all old nodes cassandra
+		apigee_101
+		apigee_102
 
-1.Add new group & Identify nodes zookeeper in group
+	1.Add new group & Identify nodes zookeeper in group
 
-	[dc_1_zk]
-	#Listing of all old nodes cassandra 
-	
-1. Add new group & Identify nodes new cassandra in group
+		[dc_1_zk]
+		#Listing of all old nodes cassandra 
+		
+	1. Add new group & Identify nodes new cassandra in group
 
-	[dc_1_c]
-	apigee_101
-	apigee_102
-	
-1. We can add the dc_1_c group to the larger group
+		[dc_1_c]
+		apigee_101
+		apigee_102
+		
+	1. We can add the dc_1_c group to the larger group
 
-	[expand_c:children]
-	dc_1_c
+		[expand_c:children]
+		dc_1_c
 
-1. We can add the expand_c group to the larger group
+	1. We can add the expand_c group to the larger group
 
-	[expand:children]
-	expand_c
+		[expand:children]
+		expand_c
 	
 
 ## Next Steps
