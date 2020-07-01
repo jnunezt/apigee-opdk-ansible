@@ -49,6 +49,31 @@ We describe the uses cases that are supported as follows:
 
 		[expand:children]
 		expand_c
+		
+	### Edit inventory files for all data centers for new Router & Message Processor
+
+	Add new nodes on inventory
+
+		[all]
+		#Listing of all nodes in data center
+		apigee_111 ansible_host=xx.xx.xx.xx
+		apigee_112 ansible_host=xx.xx.xx.xx
+
+	Add new group & Identify nodes new rmp in group
+
+		[dc_1_r]
+		apigee_111
+		apigee_112
+		
+	We can add the dc_1_r group to the larger group
+
+		[expand_rmp:children]
+		dc_1_r
+
+	We can add the expand_rmp group to the larger group
+
+		[expand:children]
+		expand_rmp
 	
 
 ## Next Steps
