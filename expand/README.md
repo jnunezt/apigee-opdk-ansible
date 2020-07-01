@@ -19,7 +19,9 @@ We describe the uses cases that are supported as follows:
 
 		[all]
 		#Listing of all nodes in data center
-		
+		apigee_101 ansible_host=xx.xx.xx.xx
+		apigee_102 ansible_host=xx.xx.xx.xx
+
 	1. Add new nodes cassandra in group
 
 		[dc_1_ds]
@@ -31,7 +33,7 @@ We describe the uses cases that are supported as follows:
 
 		[dc_1_zk]
 		#Listing of all old nodes cassandra 
-		
+	
 	1. Add new group & Identify nodes new cassandra in group
 
 		[dc_1_c]
