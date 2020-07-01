@@ -53,8 +53,8 @@ If this task fails due to sudo privilege, please re-invoke the script and pass t
 
 ## Next Steps Single Region
 
-Please continue with the [next steps](../../installations/single-region/README.md#quick-start-usage-overview) in the process.
+Please continue with the [next steps](../../../installations/single-region/README.md#quick-start-usage-overview) in the process.
 
 ## Next Steps Multi Region
 
-Please continue with the [next steps](../../installations/multi-region/README.md#quick-start-usage-overview) in the process.
+Please continue with the [next steps](../../../installations/multi-region/README.md#quick-start-usage-overview) in the process.
