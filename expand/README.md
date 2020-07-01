@@ -17,22 +17,22 @@ We describe the uses cases that are supported as follows:
 
 	1. Add new nodes on inventory
 
-		[all]
-		--Listing of all nodes in data center
+		`[all]`
+		-Listing of all nodes in data center
 		apigee_101 ansible_host=xx.xx.xx.xx
 		apigee_102 ansible_host=xx.xx.xx.xx
 
 	1. Add new nodes cassandra in group
 
 		[dc_1_ds]
-		--Listing of all old nodes cassandra
+		-Listing of all old nodes cassandra
 		apigee_101
 		apigee_102
 
 	1.Add new group & Identify nodes zookeeper in group
 
 		[dc_1_zk]
-		--Listing of all old nodes cassandra 
+		-Listing of all old nodes cassandra 
 	
 	1. Add new group & Identify nodes new cassandra in group
 
