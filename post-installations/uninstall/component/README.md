@@ -56,4 +56,4 @@ not listed here will function.
 
 ## Next Steps
 
-Please continue with the [next steps](../README.md#ansible-apigee-private-cloud-recovery) in the process.
+Please continue with the [next steps](../../README.md#ansible-apigee-private-cloud-recovery) in the process.
