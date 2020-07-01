@@ -1,0 +1,76 @@
+---
+- name: Cassandra
+  hosts: ds
+  tags: ['ds']
+  strategy: free
+  tasks:
+    - name: AutoStart Cassandra
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-cassandra disable_autostart'
+
+- name: Zookeeper
+  hosts: ds
+  tags: ['zk']
+  strategy: free
+  tasks:
+    - name: AutoStart Zookeeper
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-zookeeper disable_autostart'
+
+- name: Ldap
+  hosts: ldap
+  tags: ['ldap']
+  strategy: free
+  tasks:
+    - name: AutoStart Ldap
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-openldap disable_autostart'
+
+- name: Management Server
+  hosts: ms
+  tags: ['ms']
+  strategy: free
+  tasks:
+    - name: AutoStart Management Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-management-server disable_autostart'
+
+- name: Edge-UI
+  hosts: ui
+  tags: ['ui']
+  strategy: free
+  tasks:
+    - name: AutoStart UI
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-ui disable_autostart'
+
+- name: Router
+  hosts: router,rmp
+  tags: ['router','r']
+  strategy: free
+  tasks:
+    - name: AutoStart Router
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-router disable_autostart'
+
+- name: Message Processor
+  hosts: mp,rmp
+  tags: ['mp']
+  strategy: free
+  tasks:
+    - name: AutoStart Message Processor
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-message-processor disable_autostart'
+      
+- name: Qpid
+  hosts: qpid
+  tags: ['qpid']
+  strategy: free
+  tasks:
+    - name: AutoStart Qpid
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-qpidd disable_autostart'
+    - name: Start Qpid Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-qpid-server disable_autostart'
+      
+- name: Postgres
+  hosts: pg
+  tags: ['pg']
+  strategy: free
+  tasks:
+    - name: AutoStart Postgres
+      command: '/opt/apigee/apigee-service/bin/apigee-service apigee-postgresql disable_autostart'
+    - name: Start Postgres Server
+      command: '/opt/apigee/apigee-service/bin/apigee-service edge-postgres-server disable_autostart'

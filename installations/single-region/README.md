@@ -44,6 +44,8 @@ We describe the uses cases that are supported as follows:
 
 1. Use playbooks to install alert email monit. ([here](../../post-installations/monit/alert-email/README.md#usage-instructions))
 
+1. Use playbooks to enable autostart  ZooKeeper, Cassandra, LDAP(OpenLDAP). ([here](../../post-installations/autostart/README.md#usage-instructions))
+
 1. Use playbooks to create new organization on the platform. ([here](../../post-installations/organization/README.md#usage-instructions))
 
 1. Use playbooks to create new environment on the organization. ([here](../../post-installations/environment/README.md#usage-instructions))
