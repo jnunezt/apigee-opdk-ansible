@@ -46,6 +46,8 @@ We describe the uses cases that are supported as follows:
 
 1. Use playbooks to enable autostart zooKeeper, cassandra, openLDAP. ([here](../../post-installations/autostart/README.md#usage-instructions))
 
+1. Use playbooks to install jmx monitoring. ([here](../../post-installations/jmx-prometheus/README.md#usage-instructions))
+
 1. Use playbooks to create new organization on the platform. ([here](../../post-installations/organization/README.md#usage-instructions))
 
 1. Use playbooks to create new environment on the organization. ([here](../../post-installations/environment/README.md#usage-instructions))
